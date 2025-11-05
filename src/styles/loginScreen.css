@@ -1,0 +1,73 @@
+.login-general-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+.general-form-login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #111827;
+    border-left: solid 2px #25303f;
+    box-shadow: 0 0 10px #25303f;
+    height: 100vh;
+    font-family: "Bitcount Grid Single", system-ui;
+    font-weight: 500;
+    padding: 50px;
+}
+
+.title-container{
+    display: flex;
+    flex-direction: column;
+    color: rgba(0, 0, 0, 0.753);
+    z-index: 1;
+    font-family: "Bitcount Grid Single", system-ui;
+    font-weight: 700;
+    filter: drop-shadow(#25303f 0mm 0mm 2mm);
+    font-size: 25px; 
+    border: 0,5px solid #010618;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #0f1828;
+}
+
+.form-login-container{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin: auto;
+    border: solid 0,5px #010618;
+    padding: 20px;
+    border-radius: 10px;
+    gap: 20px;
+    background-color: #1f2937;
+    box-shadow: 0 0 20px #010618;
+}
+
+.left-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: #111827;
+}
+
+.form-imputs{
+    display: flex;
+    flex-direction: column;
+    color: rgba(255, 255, 255, 0.753);
+    font-family: "Bitcount Grid Single", system-ui;
+    font-weight: 500;
+    gap: 5px;
+}
+
+.inputs{
+    display: flex;
+    border: 1px solid #010618;
+    box-shadow: #010618 0mm 0mm 10mm;
+    border-radius: 5px;
+    padding: 10px;
+}
