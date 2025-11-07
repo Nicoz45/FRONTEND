@@ -1,8 +1,10 @@
+import ENVIRONMENT from "../config/environment.config"
+
 export async function register(username, email, password) {
     try {
         const body = { name: username, email, password }
         //Fetch es una funcion nativa de JS para hacer consultas HTTP
-        const res_http = await fetch('http://localhost:8080/api/auth/register',
+        const res_http = await fetch(ENVIRONMENT.VITE_API_URL + '/api/auth/register',
             {
                 method: 'POST',
                 headers: {
@@ -26,7 +28,7 @@ export async function register(username, email, password) {
 export async function login(email, password){
     try{
         const body = {email, password}
-        const res_http = await fetch('http://localhost:8080/api/auth/login',
+        const res_http = await fetch(ENVIRONMENT.VITE_API_URL + '/api/auth/login',
         { method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
