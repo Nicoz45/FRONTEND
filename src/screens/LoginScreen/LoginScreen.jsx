@@ -3,7 +3,7 @@ import { Link, useLocation, useNavigate } from 'react-router'
 import useFetch from '../../Hooks/useFetch'
 import { login } from '../../services/authService'
 import useForm from '../../Hooks/useForm'
-import '../../styles//loginScreen.css'
+import '../../styles/loginScreen.css'
 import { AuthContext } from '../../Context/AuthContext'
 
 const LoginScreen = () => {

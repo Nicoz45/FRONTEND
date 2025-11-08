@@ -1,6 +1,6 @@
 import React from 'react'
 import { useLocation } from 'react-router'
-import './homeScreen.css'
+import '../../styles/homeScreen.css'
 
 const HomeScreen = () => {
     return (
