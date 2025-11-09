@@ -87,7 +87,7 @@ const LoginScreen = () => {
                         ? <button disabled>Login...</button>
                         : <button className='button-register'>Login</button>
                     }
-                    <span>No tienes una cuenta?<Link className='link-register' to='/register'>Registrarse</Link></span>
+                    <span className='Register-link-container'>No tienes una cuenta?<Link className='link-register' to='/register'>Registrarse</Link></span>
                     
                 </form>
             </div>
