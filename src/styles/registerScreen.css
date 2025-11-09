@@ -23,7 +23,6 @@
     align-items: center;
     background: linear-gradient(to right, black, rgb(83, 83, 83));
     height: 100vh;
-    font-family: "Bitcount Grid Single", system-ui;
     font-weight: 500;
 }
 
@@ -31,7 +30,6 @@
     padding: 8px;
     border-radius: 5px;
     border: none;
-    font-family: "Bitcount Grid Single", system-ui;
 }
 
 .button-register{
@@ -56,7 +54,6 @@
     margin-top: 20px;
     position: relative;
     top: 200px;
-    font-family: "Bitcount Grid Single", system-ui;
     font-weight: 200;
     filter: drop-shadow(0 -6mm 4mm rgb(160 0 210))
 }
