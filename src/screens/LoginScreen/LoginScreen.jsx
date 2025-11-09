@@ -62,7 +62,7 @@ const LoginScreen = () => {
                 </div>
             </div>
             <div className='general-form-login-container'>
-                <h1>Iniciar Sesion</h1>
+                <h1 className='session-text'>Iniciar Sesion</h1>
                 <form className='form-login-container' onSubmit={handleSubmit}>
                     <div className='form-imputs'>
                         <label htmlFor="Email">Email</label>
@@ -87,7 +87,8 @@ const LoginScreen = () => {
                         ? <button disabled>Login...</button>
                         : <button className='button-register'>Login</button>
                     }
-                    <Link to='/register'>Registrarse</Link>
+                    <span>No tienes una cuenta?<Link className='link-register' to='/register'>Registrarse</Link></span>
+                    
                 </form>
             </div>
         </div>
