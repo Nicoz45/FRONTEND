@@ -1,35 +1,39 @@
-import React from 'react'
-import { useLocation } from 'react-router'
-import '../../styles/homeScreen.css'
+import React, { useEffect } from 'react'
+import useFetch from '../../Hooks/useFetch'
+import { Link } from 'react-router'
+import getWorkspaces from '../../services/workspace.service'
 
 const HomeScreen = () => {
+
+    const { sendRequest, response, loading, error } = useFetch()
+
+    useEffect(
+        () => {
+            sendRequest(
+                () => getWorkspaces()
+            )
+        },
+        []
+    )
+    
     return (
-        <div className='home-screen-container'>
-            <header className='general-header-container'>
-                <div className='logo'>
-                    <h1>SGPT</h1>
-                    <span>Sistema de Gestión de Proyectos y Tareas</span>
-                </div>
-                <nav className='nav-bar'>
-                    <ul>
-                        <li>Proyectos</li>
-                        <li>Tareas</li>
-                        <li>Usuarios</li>
-                        <li>Foro</li>
-                    </ul>
-                </nav>
-            </header>
-            <main className='Principal-screen'>
-                <div className="welcome-title">
-                    <h2>Bienvenido a SGPT</h2>
-                    <p>Tu sistema integral para la gestión eficiente de proyectos y tareas.</p>
-                </div>
-            </main>
-            <footer>
-                <div className='footer-text'>
-                    <span>© 2025 SGPT, Todos los derechos reservados</span>
-                </div>
-            </footer>
+        <div className='home-screen-general-container'>
+            <h1>Lista de espacios de trabajo</h1>
+            {
+                loading
+                    ? <span>Cargando...</span>
+                    : <div>
+                        {response &&
+                            response.data.workspaces.map((workspace) => {
+                                return (
+                                    <div>
+                                        <h2>{workspace.workspace_name}</h2>
+                                        <Link to={'/workspace/' + workspace.workspace_id}>Abrir workspace</Link>
+                                    </div>
+                                )
+                            })}
+                    </div>
+            }
         </div>
     )
 }

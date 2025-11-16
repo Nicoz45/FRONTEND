@@ -156,4 +156,75 @@ Es el sustituto de jsonwebtoken
 
 Como no podemos usar jsonwebtoken en frontend y solo sirve para back, tenemos la mejor alternativa que es react-jwt
 
+### Empezar un proyecto web:
+
+- Para trabajar en modo colaborativo, necesitariamos aprender Gitflow.
+*GitFlow*
+    Es una estrategia de ramificacion `(branching mode)` para Git que organiza el trabajo en distintas ramas con roles bien definidos, ideal para proyectos con ciclos de versiones `(releases)` y equipos de desarrollo colaborativo.
+
+    Fue propuesto por Vincent Driessen y es una de las metodologias mas utilizadas para mantener un flujo de trabajo limpio y controlado.
+
+*Estructura general de GitFlow*
+
+Rama            Proposito                                   vida util
+----------------------------------------------------------------------
+`main`          Contiene el codigo en produccion,           Permanente
+                siempre estable.
+----------------------------------------------------------------------
+`develop`       Contiene el codigo en desarrollo,           Permanente
+                base para nuevas features.
+-----------------------------------------------------------------------
+`feature/*`     Para desarrollar nuevas funcionalidades     Temporal
+-----------------------------------------------------------------------
+`release/*`     Para preparar una nueva version estable     Temporal
+                antes de publicarla
+-----------------------------------------------------------------------
+`hotfix/*`      Para corregir errores criticos en          Temporal                
+                produccion
+
+
+git checkout -b development
+
+`
+
+**Subir la rama de desarrollo:**
+
+git push -u origin development
+
+Hacer feature:
+
+git checkout -b feature/nombre_de_la_feature
+git add .
+git commit -m "Mensaje descriptivo de la feature"
+git push -u origin feature/nombre_de_la_feature
+
+Una vez terminada la feature:
+
+git checkout development
+git merge feature/nombre_de_la_feature
+git branch -d feature/nombre_de_la_feature
+git push origin development
+git push origin --delete feature/test
+
+
+### Clase 22 
+- Pasamos a hacer que podamos hacer nuestra consulta GET de los espacios de trabajo desde el FRONT.
+- Creamos un servicio en la carpeta de servicios, donde sincronizaremos nuestro get con el back.
+            async function getWorkspaces (){
+                const response_http = await fetch(
+                    ENVIRONMENT.VITE_API_URL + '/api/workspace',
+                    {
+                        method: 'GET',
+                        headers:{
+                            'Authorization': `Bearer ${localStorage.getItem('auth_token')}`
+                        }
+                    }
+                )
+                if(!response_http){
+                    throw new Error('Error al obtener la lista de workspaces')
+                }
+                const response = await response_http.json()
+                return response
+            }
+
 
