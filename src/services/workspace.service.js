@@ -2,7 +2,7 @@ import ENVIRONMENT from "../config/environment.config";
 
 async function getWorkspaces (){
     const response_http = await fetch(
-        ENVIRONMENT.API_URL_LOCAL + '/api/workspace',
+        ENVIRONMENT.VITE_API_URL + '/api/workspace',
         {
             method: 'GET',
             headers:{

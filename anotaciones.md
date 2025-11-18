@@ -227,4 +227,34 @@ git push origin --delete feature/test
                 return response
             }
 
+- Pasamos a crear un useEffect en nuestro HomeScreen que haga uso de mi funcion getWorkspaces.
+            useEffect(
+                () => {
+                    sendRequest(
+                        () => getWorkspaces()
+                    )
+                },
+                []
+            )
 
+- Y hacemos el html que queremos que nos retorne este componente. Junto con un condicional:
+        return (
+                <div className='home-screen-general-container'>
+                    <h1>Lista de espacios de trabajo</h1>
+                    {
+                        loading
+                            ? <span>Cargando...</span>
+                            : <div>
+                                {response &&
+                                    response.data.workspaces.map((workspace) => {
+                                        return (
+                                            <div>
+                                                <h2>{workspace.workspace_name}</h2>
+                                                <Link to={'/workspace/' + workspace.workspace_id}>Abrir workspace</Link>
+                                            </div>
+                                        )
+                                    })}
+                            </div>
+                    }
+                </div>
+            )
