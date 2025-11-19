@@ -71,11 +71,11 @@ const RegisterScreen = () => {
                         id='password'
                         onChange={onInputChange} />
                 </div>
-                {error && <span style={{ color: 'red' }}>{error}</span>}
-                {response && <span style={{ color: 'green' }}>Usuario registrado con exito!</span>}
+                {error && <span className='error-text little-text'>{error}</span>}
+                {response && <span className='success-text little-text'>Usuario registrado con exito!</span>}
                 {
                     loading
-                        ? <button disabled>Registrando...</button>
+                        ? <button className='button-register' disabled>Registrando...</button>
                         : <button className='button-register'>Registrarse</button>
                 }
             </form>
