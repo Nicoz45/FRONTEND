@@ -44,41 +44,49 @@ const RegisterScreen = () => {
     /* register('nicolas', 'zaratenico52@gmail.com', 'Nicolatesla546') */
     return (
         <div className='general-form-container'>
-            <h1 className='title'>Registrarse</h1>
-            <form onSubmit={handleSubmit} className='form-container'>
-                <div className='form-field'>
-                    <label htmlFor="username">Nombre de usuario</label>
-                    <input className='input-text' type="text" placeholder='pepe'
-                        value={form_State[REGISTER_FORM_FIELDS.USERNAME]}
-                        name={REGISTER_FORM_FIELDS.USERNAME}
-                        id='username'
-                        onChange={onInputChange}
-                    />
+            <header className='header-logo-container'>
+                <div className='logo-container'>
+                    <img src="https://a.slack-edge.com/bv1-13/slack_logo-e971fd7.svg" alt="slack-logo" style={{ width: '100px' }} />
                 </div>
-                <div className='form-field'>
-                    <label htmlFor="email">Email:</label>
-                    <input className='input-text' type="text" placeholder='pepe@gmail.com'
-                        value={form_State[REGISTER_FORM_FIELDS.EMAIL]}
-                        name={REGISTER_FORM_FIELDS.EMAIL}
-                        id='email'
-                        onChange={onInputChange} />
-                </div>
-                <div className='form-field'>
-                    <label htmlFor="password">Contraseña</label>
-                    <input className='input-text' type="password" placeholder='pepe-1234'
-                        value={form_State[REGISTER_FORM_FIELDS.PASSWORD]}
-                        name={REGISTER_FORM_FIELDS.PASSWORD}
-                        id='password'
-                        onChange={onInputChange} />
-                </div>
-                {error && <span className='error-text little-text'>{error}</span>}
-                {response && <span className='success-text little-text'>Usuario registrado con exito!</span>}
-                {
-                    loading
-                        ? <button className='button-register' disabled>Registrando...</button>
-                        : <button className='button-register'>Registrarse</button>
-                }
-            </form>
+            </header>
+            <main className='title-and-form-container'>
+                <h1 className='title'>Registrarse</h1>
+                <h3>Te sugerimos que uses la <span>direccion de correo electronico que usas en el trabajo.</span></h3>
+                <form onSubmit={handleSubmit} className='form-container'>
+                    <div className='form-field'>
+                        <label htmlFor="username">Nombre de usuario</label>
+                        <input className='input-text' type="text" placeholder='pepe'
+                            value={form_State[REGISTER_FORM_FIELDS.USERNAME]}
+                            name={REGISTER_FORM_FIELDS.USERNAME}
+                            id='username'
+                            onChange={onInputChange}
+                        />
+                    </div>
+                    <div className='form-field'>
+                        <label htmlFor="email">Email:</label>
+                        <input className='input-text' type="text" placeholder='pepe@gmail.com'
+                            value={form_State[REGISTER_FORM_FIELDS.EMAIL]}
+                            name={REGISTER_FORM_FIELDS.EMAIL}
+                            id='email'
+                            onChange={onInputChange} />
+                    </div>
+                    <div className='form-field'>
+                        <label htmlFor="password">Contraseña</label>
+                        <input className='input-text' type="password" placeholder='pepe-1234'
+                            value={form_State[REGISTER_FORM_FIELDS.PASSWORD]}
+                            name={REGISTER_FORM_FIELDS.PASSWORD}
+                            id='password'
+                            onChange={onInputChange} />
+                    </div>
+                    {error && <span className='error-text little-text'>{error}</span>}
+                    {response && <span className='success-text little-text'>Usuario registrado con exito!</span>}
+                    {
+                        loading
+                            ? <button className='button-register' disabled>Registrando...</button>
+                            : <button className='button-register'>Registrarse</button>
+                    }
+                </form>
+            </main>
         </div>
     )
 }

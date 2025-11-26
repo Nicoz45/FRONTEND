@@ -4,7 +4,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     background-color: white; 
 }
 
@@ -34,7 +33,6 @@
     background-color: #611f69;
     padding: 12px;
     color: rgba(255, 255, 255, 0.863);
-    font-weight:bolder;
     font-size: 15px;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.74);
     cursor: pointer;
@@ -57,6 +55,7 @@
     background-color: rgb(214, 214, 214);
     padding: 5px;
     border-radius: 5px;
+    box-shadow: 0px 0px 5px black;
 }
 
 .title{
@@ -64,4 +63,10 @@
     font-weight: 600;
     margin-bottom: 20px;
     filter: drop-shadow(0px 0px 3px rgba(0, 0, 0, 0.747));
+}
+
+.header-logo-container{
+    display: flex;
+    flex-direction: row;
+    padding: 48px 0px 40px;
 }

@@ -1,39 +1,10 @@
 import React, { useEffect } from 'react'
-import useFetch from '../../Hooks/useFetch'
-import { Link } from 'react-router'
-import getWorkspaces from '../../services/workspace.service'
+import HomeScreenComponent from '../../Components/HomeScreenComponents/HomeScreenComponent'
 
-const HomeScreen = () => {
-
-    const { sendRequest, response, loading, error } = useFetch()
-
-    useEffect(
-        () => {
-            sendRequest(
-                () => getWorkspaces()
-            )
-        },
-        []
-    )
-    
+const HomeScreen = () => {    
     return (
         <div className='home-screen-general-container'>
-            <h1>Lista de espacios de trabajo</h1>
-            {
-                loading
-                    ? <span>Cargando...</span>
-                    : <div>
-                        {response &&
-                            response.data.workspaces.map((workspace) => {
-                                return (
-                                    <div>
-                                        <h2>{workspace.workspace_name}</h2>
-                                        <Link to={'/workspace/' + workspace.workspace_id}>Abrir workspace</Link>
-                                    </div>
-                                )
-                            })}
-                    </div>
-            }
+            <HomeScreenComponent/>
         </div>
     )
 }
