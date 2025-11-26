@@ -3,6 +3,9 @@ import '../../styles/registerScreen.css'
 import useForm from '../../Hooks/useForm.jsx'
 import { register } from '../../services/authService.js'
 import useFetch from '../../Hooks/useFetch.jsx'
+import { PiGlobeSimple } from 'react-icons/pi'
+import ICONS from '../../constants/Icons.jsx'
+import { Link } from 'react-router'
 
 const RegisterScreen = () => {
     //Guardamos los campos que tendra nuestro form
@@ -51,32 +54,34 @@ const RegisterScreen = () => {
             </header>
             <main className='title-and-form-container'>
                 <h1 className='title'>Registrarse</h1>
-                <h3>Te sugerimos que uses la <span>direccion de correo electronico que usas en el trabajo.</span></h3>
+                <div className='text-span'>
+                    <p>Te sugerimos que uses la <span>direccion de correo electronico que usas en el trabajo.</span></p>
+                </div>
                 <form onSubmit={handleSubmit} className='form-container'>
                     <div className='form-field'>
-                        <label htmlFor="username">Nombre de usuario</label>
-                        <input className='input-text' type="text" placeholder='pepe'
+                        <input className='input-text' type="text"
                             value={form_State[REGISTER_FORM_FIELDS.USERNAME]}
                             name={REGISTER_FORM_FIELDS.USERNAME}
                             id='username'
                             onChange={onInputChange}
                         />
+                        <label htmlFor="username">Nombre de usuario</label>
                     </div>
                     <div className='form-field'>
-                        <label htmlFor="email">Email:</label>
-                        <input className='input-text' type="text" placeholder='pepe@gmail.com'
+                        <input className='input-text' type="text"
                             value={form_State[REGISTER_FORM_FIELDS.EMAIL]}
                             name={REGISTER_FORM_FIELDS.EMAIL}
                             id='email'
                             onChange={onInputChange} />
+                        <label htmlFor="email">Email:</label>
                     </div>
                     <div className='form-field'>
-                        <label htmlFor="password">Contraseña</label>
-                        <input className='input-text' type="password" placeholder='pepe-1234'
+                        <input className='input-text' type="password"
                             value={form_State[REGISTER_FORM_FIELDS.PASSWORD]}
                             name={REGISTER_FORM_FIELDS.PASSWORD}
                             id='password'
                             onChange={onInputChange} />
+                        <label htmlFor="password">Contraseña</label>
                     </div>
                     {error && <span className='error-text little-text'>{error}</span>}
                     {response && <span className='success-text little-text'>Usuario registrado con exito!</span>}
@@ -86,7 +91,18 @@ const RegisterScreen = () => {
                             : <button className='button-register'>Registrarse</button>
                     }
                 </form>
+                <div className="used-slack-link-container">
+                    <span>¿Ya estas usando Slack?</span>
+                    <Link to='/login'>Iniciar sesion en un espacio de trabajo existente</Link>
+                </div>
             </main>
+            <footer className='footer-options-container'>
+                <div className='options-container'>
+                    <a href="#">Privacidad y términos</a>
+                    <a href="#">Contactarnos</a>
+                    <a href="#"><ICONS.GlobeSimple/>Cambiar region</a>
+                </div>
+            </footer>
         </div>
     )
 }
