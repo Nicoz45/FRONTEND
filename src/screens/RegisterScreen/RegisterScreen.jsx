@@ -1,9 +1,9 @@
 import React from 'react'
 import '../../styles/registerScreen.css'
+import '../../styles/index.css'
 import useForm from '../../Hooks/useForm.jsx'
 import { register } from '../../services/authService.js'
 import useFetch from '../../Hooks/useFetch.jsx'
-import { PiGlobeSimple } from 'react-icons/pi'
 import ICONS from '../../constants/Icons.jsx'
 import { Link } from 'react-router'
 
@@ -65,7 +65,7 @@ const RegisterScreen = () => {
                             id='username'
                             onChange={onInputChange}
                         />
-                        <label htmlFor="username">Nombre de usuario</label>
+                        <label htmlFor="username" className='label-text'>Nombre de usuario</label>
                     </div>
                     <div className='form-field'>
                         <input className='input-text' type="text"
@@ -73,7 +73,7 @@ const RegisterScreen = () => {
                             name={REGISTER_FORM_FIELDS.EMAIL}
                             id='email'
                             onChange={onInputChange} />
-                        <label htmlFor="email">Email:</label>
+                        <label htmlFor="email" className='label-text'>Email:</label>
                     </div>
                     <div className='form-field'>
                         <input className='input-text' type="password"
@@ -81,7 +81,7 @@ const RegisterScreen = () => {
                             name={REGISTER_FORM_FIELDS.PASSWORD}
                             id='password'
                             onChange={onInputChange} />
-                        <label htmlFor="password">Contraseña</label>
+                        <label htmlFor="password" className='label-text'>Contraseña</label>
                     </div>
                     {error && <span className='error-text little-text'>{error}</span>}
                     {response && <span className='success-text little-text'>Usuario registrado con exito!</span>}

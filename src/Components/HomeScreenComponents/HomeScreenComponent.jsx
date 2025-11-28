@@ -7,7 +7,7 @@ import { AuthContext } from "../../Context/AuthContext";
 
 const HomeScreenComponent = () => {
     const { sendRequest, response, loading, error } = useFetch()
-    const { onLogout, user } = useContext(AuthContext)
+    const { onLogout, user} = useContext(AuthContext)
 
     useEffect(
         () => {

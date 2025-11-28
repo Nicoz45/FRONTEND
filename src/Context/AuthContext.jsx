@@ -10,7 +10,6 @@ const AuthContextProvider = ({ children }) => {
     const navigate = useNavigate()
     // Estamos guardando datos de sesion
     const [user, setUser] = useState(null)
-
     //Marca si esta o no logueado el usuario.
     const [isLogged, setIsLogged] = useState(Boolean(localStorage.getItem('auth_token')))
     /* const { decodedToken, isExpired } = useJwt(localStorage.getItem('auth_token')) */

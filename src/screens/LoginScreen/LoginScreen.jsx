@@ -4,6 +4,7 @@ import useFetch from '../../Hooks/useFetch'
 import { login } from '../../services/authService'
 import useForm from '../../Hooks/useForm'
 import '../../styles/loginScreen.css'
+import '../../styles/index.css'
 import { AuthContext } from '../../Context/AuthContext'
 
 const LoginScreen = () => {
@@ -55,30 +56,33 @@ const LoginScreen = () => {
     //Si venimos de verificar el mail, mostrar la alerta de verificado.
     return (
         <div className='login-general-container'>
-            <div className='left-container'>
-                <div className='title-container'>
-                    <h1>SGPT</h1>
-                    <span>Sistema de Gestion de Proyectos y Tareas</span>
+            <header className='header-logo-slack-container'>
+                <div className='logo-slack-container'>
+                    <img src="https://a.slack-edge.com/bv1-13/slack_logo-e971fd7.svg" alt="slack-logo" style={{width: '100px'}}/>
                 </div>
-            </div>
+                <div className='register-container'>
+                    <span className='Register-span'>¿Es tu primera vez en Slack?</span>
+                    <Link className='link-register' to='/register'>Crear una cuenta</Link>
+                </div>
+            </header>
             <div className='general-form-login-container'>
-                <h1 className='session-text'>Iniciar Sesion</h1>
+                <h1 className='session-text'>Escribe tu correo y contraseña para iniciar Sesion</h1>
                 <form className='form-login-container' onSubmit={handleSubmit}>
                     <div className='form-imputs'>
-                        <label htmlFor="Email">Email</label>
-                        <input type="text" className='inputs'
+                        <input type="text" className='input-text'
                             value={form_State[LOGIN_FORM_FIELDS.EMAIL]}
                             name={LOGIN_FORM_FIELDS.EMAIL}
                             id='Email'
                             onChange={onInputChange} />
+                        <label htmlFor="Email" className='label-text'>Email</label>
                     </div>
                     <div className='form-imputs'>
-                        <label htmlFor="Password">Password</label>
-                        <input type="password" className='inputs'
+                        <input type="password" className='input-text'
                             value={form_State[LOGIN_FORM_FIELDS.PASSWORD]}
                             name={LOGIN_FORM_FIELDS.PASSWORD}
                             id='Password'
                             onChange={onInputChange} />
+                        <label htmlFor="Password" className='label-text'>Password</label>
                     </div>
                     {error && <span style={{ color: 'red' }}>{error}</span>}
                     {response && <span style={{ color: 'green' }}>Iniciando sesion</span>}
@@ -87,8 +91,10 @@ const LoginScreen = () => {
                         ? <button disabled>Login...</button>
                         : <button className='button-register'>Login</button>
                     }
-                    <span className='Register-link-container'>No tienes una cuenta?<Link className='link-register' to='/register'>Registrarse</Link></span>
-                    
+                    <div className='forgot-password-container'>
+                        <span className='forgot-password'>¿Tienes problemas para iniciar sesion?</span>
+                        <Link>Recuperar contraseña</Link>
+                    </div>
                 </form>
             </div>
         </div>

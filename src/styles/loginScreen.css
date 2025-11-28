@@ -1,107 +1,63 @@
-.login-general-container{
+.login-general-container {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
+    height: 100vh;
+
 }
+
 .general-form-login-container {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: #111827;
-    border-left: solid 2px #25303f;
-    box-shadow: 0 0 10px #25303f;
-    height: 100vh;
-    font-weight: 500;
-    padding: 50px;
-}
-
-.title-container{
-    display: flex;
-    flex-direction: column;
-    color: rgb(248, 245, 245);
-    z-index: 1;
-    font-weight: 700;
-    filter: drop-shadow(#25303f 0mm 0mm 2mm);
-    font-size: 40px; 
-    border: 0,5px solid #ffffffcc;
-    border-radius: 10px;
-    padding: 10px;
-    background-color: #0f1828;
-    transition: all 0.3s ease-in-out;
-}
-.title-container:hover{
-    box-shadow: 0 0 10px #010618;
-}
-
-.session-text{
-    color: white;
-    margin-bottom: 20px;
-    font-size: 40px;
-    font-weight: 700;
-}
-
-.form-login-container{
-    display: flex;
-    flex-direction: column;
-    width: 300px;
-    margin: auto;
-    border: solid 0,5px #010618;
-    padding: 20px;
-    border-radius: 10px;
-    gap: 20px;
-    background-color: #1f2937;
-    box-shadow: 0 0 20px #010618;
-}
-
-.left-container{
-    display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
-    background-color: #111827;
+    gap: 20px;
 }
 
-.form-imputs{
+.general-form-login-container h1 {
+    font-size: 48px;
+    width: 800px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.form-login-container {
     display: flex;
     flex-direction: column;
-    color: rgba(255, 255, 255, 0.753);
-    font-weight: 500;
-    gap: 5px;
+    justify-content: center;
+    width: 350px;
+    gap: 20px;
+    color: #585858;
 }
 
-.inputs{
-    display: flex;
-    border: 1px solid #010618;
-    box-shadow: #010618 0mm 0mm 10mm;
-    border-radius: 5px;
-    padding: 10px;
-}
-
-.link-register{
-    color: rgba(255, 255, 255, 0.753);
-    text-decoration: none;
-    margin-top: 10px;
-    font-size: 14px;
-    border: solid 1px rgba(255, 255, 255, 0.2);
-    border-radius: 5px;
-    padding: 5px;
-    transition: all 0.3s ease-in-out;
-    cursor: pointer;
-}
-.link-register:hover{
-    background-color: rgba(255, 255, 255, 0.1);
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-}
-
-.Register-link-container{
+.form-imputs {
     display: flex;
     flex-direction: column;
+    position: relative;
+}
+
+.header-logo-slack-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
     align-items: center;
-    margin-top: 15px;
-    font-size: 14px;
-    color: rgba(255, 255, 255, 0.753);
+    width: 100%;
+    gap: 610px;
+    padding: 48px 40px 40px;
+}
+
+.register-container {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    color: #585858;
+    font-size: 13px;
     gap: 5px;
+}
+
+.link-register {
+    color: #3c1341;
+    text-decoration: none;
 }

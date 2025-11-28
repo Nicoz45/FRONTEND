@@ -1,0 +1,46 @@
+.general-workspace-container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(to right, #3a1040, #1d021e)
+    /* background-image: linear-gradient(to rigth,  rgba(125,57,134, 1) , rgba(95, 37, 101, 1)); */
+}
+
+.search-input{
+    width: 300px;
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+    padding-left: 10px;
+    font-size: 14px;
+    outline: none;
+}
+
+.tool-bar-general-container{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+}
+
+.workspace-main{
+    width: 100%;
+    display: flex;
+    border: 1px solid #4b2f50;
+}
+
+.main-aside-container{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #4b2f50;
+    border-radius: 5px;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-bottom: 5px;
+}

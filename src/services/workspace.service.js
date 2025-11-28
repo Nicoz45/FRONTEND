@@ -28,10 +28,13 @@ export async function getWorkspaceById(workspaces_id){
                 }
             }
         )
-        if(!response_http){
+        console.log(response_http)
+        if(!response_http.ok){
             const errorData = await response_http.json();
             throw new Error(errorData.message || 'Error al obtener el workspace')
         }
+        const response = await response_http.json()
+        return response
     } catch (error) {
         console.error('Error en getWorkspaceId:', error )
         throw Error
@@ -50,7 +53,7 @@ export async function createWorkspace(name, url_image){
             body: JSON.stringify({name, url_image})
         }
     )
-    if(!response_http){
+    if(!response_http.ok){
         throw new Error('Error al crear el Workspace')
     }
     const response = await response_http.json()
