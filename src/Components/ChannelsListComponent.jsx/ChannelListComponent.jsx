@@ -6,11 +6,13 @@ import { useParams } from 'react-router'
 
 const ChannelListComponent = () => {
     const {workspace_id} = useParams()
-    const {sendRequest, channel_detail, workspace_detail, response, loading, error} = useFetch()
+    const {sendRequest, response, loading, error} = useFetch()
     useEffect(() => {
             sendRequest(() => getWorkspaceById(workspace_id))
         }, [workspace_id])
 
+    const workspace_detail = response?.data?.workspace
+    const channel_detail = response?.data?.channels
     return (
         <div>
             <aside className='general-aside-container'>

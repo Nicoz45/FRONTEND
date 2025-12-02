@@ -1,11 +1,12 @@
 import React, { useContext, useEffect } from "react";
 import useFetch from "../../Hooks/useFetch";
 import '../../styles/homeScreen.css'
-import { data, Link } from "react-router";
+import { data, Link, useNavigate } from "react-router";
 import { getWorkspaces } from "../../services/workspace.service";
 import { AuthContext } from "../../Context/AuthContext";
 
 const HomeScreenComponent = () => {
+    const navigate = useNavigate()
     const { sendRequest, response, loading, error } = useFetch()
     const { onLogout, user} = useContext(AuthContext)
 
@@ -17,6 +18,11 @@ const HomeScreenComponent = () => {
         },
         []
     )
+
+    const handleCreateWorkspace = () => {
+        navigate('/verify-code')
+    }
+
     return <div className="home-screen-component-container">
         <header className="general-header-container">
             <h2>Slack</h2>
@@ -68,7 +74,7 @@ const HomeScreenComponent = () => {
             </div>
             <div className="create-workspace-container">
                 <span>Quieres usar slack con otro equipo?</span>
-                <button>Crear un nuevo espacio de trabajo</button>
+                <button onClick={handleCreateWorkspace}>Crear un nuevo espacio de trabajo</button>
             </div>
         </main>
         <footer></footer>

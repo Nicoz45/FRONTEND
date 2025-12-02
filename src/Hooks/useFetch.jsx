@@ -27,12 +27,8 @@ const useFetch = () => {
     function resetResponse(){
         setResponse(null)
     }
-    const workspace_detail = response?.data?.workspace_detail
-    const channel_detail = response?.data?.channels
-    console.log(channel_detail)
+    
     return{
-        channel_detail,
-        workspace_detail,
         response,
         loading,
         error,

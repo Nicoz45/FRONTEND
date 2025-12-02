@@ -93,7 +93,7 @@ const LoginScreen = () => {
                     }
                     <div className='forgot-password-container'>
                         <span className='forgot-password'>¿Tienes problemas para iniciar sesion?</span>
-                        <Link>Recuperar contraseña</Link>
+                        <Link to='/forgot-password'>Recuperar contraseña</Link>
                     </div>
                 </form>
             </div>

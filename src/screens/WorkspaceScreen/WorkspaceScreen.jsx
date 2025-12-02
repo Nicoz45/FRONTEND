@@ -7,7 +7,7 @@ import ChannelListComponent from '../../Components/ChannelsListComponent.jsx/Cha
 
 function WorkspaceScreen() {
     const { workspace_id } = useParams()
-    const { sendRequest, response, loading, error, workspace_detail } = useFetch()
+    const { sendRequest, response, loading, error} = useFetch()
 
     useEffect(() => {
         sendRequest(() => getWorkspaceById(workspace_id))
@@ -20,7 +20,7 @@ function WorkspaceScreen() {
         console.error('Error al cargar el workspace:', error)
         return <div>Error al cargar el workspace: {error.message}</div>
     }
-
+    const workspace_detail = response?.data?.workspace_detail
     return (
         <div className='general-workspace-container'>
             <header className='tool-bar-general-container'>
