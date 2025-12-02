@@ -76,7 +76,7 @@ const VerificationCodeScreen = () => {
                 <button
                     className='verify-button'
                     onClick={onVerifyClick}
-                    disabled={verifyLoading || !isCodeComplete}
+                    /* disabled={verifyLoading || !isCodeComplete} */
                 >
                     {verifyLoading ? 'Verificando...' : 'Verificar Código'}
                 </button>

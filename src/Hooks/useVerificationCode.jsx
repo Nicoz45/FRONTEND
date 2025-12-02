@@ -28,7 +28,7 @@ const useVerificationCode = () => {
         else{
             setCanResend(true)
         }
-    }, timer)
+    }, [timer])
 
     //Verificamos si el codigo fue validado correctamente
     useEffect(() => {

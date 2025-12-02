@@ -69,10 +69,11 @@ const ResetPasswordScreen = () => {
                         required
                         minLength={6}
                         />
+                        <input type="checkbox" onClick= "Password.type = this.checked ? 'text' : 'password'" />
                         <label htmlFor="Password" className="label-text">Nueva contraseña</label>
                     </div>
                     <div className="form-input">
-                        <input type="text" className="password-input" 
+                        <input type="password" className="password-input" 
                         value={form_State[RESET_PASSWORD_FORM_FIELDS.CONFIRM_PASSWORD]}
                         name={RESET_PASSWORD_FORM_FIELDS.CONFIRM_PASSWORD}
                         id='ConfirmPassword'
@@ -80,6 +81,7 @@ const ResetPasswordScreen = () => {
                         required
                         minLength={6}
                         />
+                        <input type="checkbox" onClick= "ConfirmPassword.type = this.checked ? 'text' : 'password'" />
                         <label htmlFor="ConfirmPassword" className="label-text">Confirmar contraseña</label>
                     </div>
                     {error && <span className='error-message'>{error}</span>}

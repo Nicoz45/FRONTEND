@@ -3,7 +3,7 @@ import ENVIRONMENT from "../config/environment.config";
 
 export async function sendVerificationCode() {
     try {
-        const res_http = await fetch(ENVIRONMENT.VITE_API_URL + 'api/verification/send-code',
+        const res_http = await fetch(ENVIRONMENT.VITE_API_URL + '/api/verification/send-code',
             {
                 method: 'POST',
                 headers:{
@@ -22,7 +22,7 @@ export async function sendVerificationCode() {
 
 export async function verifyCode(code){
     try {
-        const res_http = await fetch(ENVIRONMENT.VITE_API_URL + 'api/verification/verify-code',
+        const res_http = await fetch(ENVIRONMENT.VITE_API_URL + '/api/verification/verify-code',
             {
                 method: 'POST',
                 headers:{
