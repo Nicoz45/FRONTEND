@@ -13,7 +13,7 @@ export async function sendVerificationCode() {
                 }
             }
         )
-        const response = await res_http.json({html})
+        const response = await res_http.json()
         console.log('sendVerificationCode', response)
         return response
 
