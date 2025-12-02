@@ -4,7 +4,7 @@ import ENVIRONMENT from "../config/environment.config";
 
 export async function sendVerificationCode() {
     try {
-        const res_http = await fetch(ENVIRONMENT.VITE_API_URL + '/api/auth/verification/send-code/:user_id',
+        const res_http = await fetch(ENVIRONMENT.VITE_API_URL + '/api/verification/send-code/:user_id',
             {
                 method: 'POST',
                 headers:{
