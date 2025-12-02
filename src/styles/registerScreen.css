@@ -1,9 +1,9 @@
 .general-form-container{
-    width: 100%;
-    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
+    height: 100vh;
     background-color: white; 
 }
 
@@ -12,7 +12,10 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-bottom: 70px;
+    max-width: 800px;
+    gap: 20px;
+    padding: 5px;
+    margin-bottom: 230px;
 }
 
 
@@ -20,19 +23,27 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     gap: 20px;
-    padding: 10px;
-    width: 350px;
+    width: 100%;
     color: #585858;
-    border-radius: 10px;
 }
 
 .form-field{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
     position: relative;
 }
 
 
 .button-register{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 50%;
     border: none;
     border-radius: 12px;
     background-color: #611f69;
@@ -66,10 +77,14 @@
 .title{
     font-size: 50px;
     font-weight: 600;
-    margin-bottom: 20px;
 }
 
 .text-span{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
     font-size: 18px;
     margin-bottom: 30px;
 }
@@ -94,7 +109,6 @@
     flex-direction: row;
     justify-content: center;
     width: 100%;
-    margin-top: 100px;
     padding: 20px 40px;
 }
 .options-container{
@@ -113,5 +127,5 @@
 }
 
 .options-container a:hover{
-    text-decoration: solid;
+    text-decoration:solid;
 }

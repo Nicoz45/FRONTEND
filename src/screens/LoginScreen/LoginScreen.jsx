@@ -6,6 +6,7 @@ import useForm from '../../Hooks/useForm'
 import '../../styles/loginScreen.css'
 import '../../styles/index.css'
 import { AuthContext } from '../../Context/AuthContext'
+import ICONS from '../../constants/Icons'
 
 const LoginScreen = () => {
     const navigate = useNavigate()
@@ -68,7 +69,7 @@ const LoginScreen = () => {
             <div className='general-form-login-container'>
                 <h1 className='session-text'>Escribe tu correo y contraseña para iniciar Sesion</h1>
                 <form className='form-login-container' onSubmit={handleSubmit}>
-                    <div className='form-imputs'>
+                    <div className='form-inputs'>
                         <input type="text" className='input-text'
                             value={form_State[LOGIN_FORM_FIELDS.EMAIL]}
                             name={LOGIN_FORM_FIELDS.EMAIL}
@@ -76,7 +77,7 @@ const LoginScreen = () => {
                             onChange={onInputChange} />
                         <label htmlFor="Email" className='label-text'>Email</label>
                     </div>
-                    <div className='form-imputs'>
+                    <div className='form-inputs'>
                         <input type="password" className='input-text'
                             value={form_State[LOGIN_FORM_FIELDS.PASSWORD]}
                             name={LOGIN_FORM_FIELDS.PASSWORD}
@@ -91,12 +92,21 @@ const LoginScreen = () => {
                         ? <button disabled>Login...</button>
                         : <button className='button-register'>Login</button>
                     }
+                </form>
                     <div className='forgot-password-container'>
                         <span className='forgot-password'>¿Tienes problemas para iniciar sesion?</span>
                         <Link to='/forgot-password'>Recuperar contraseña</Link>
                     </div>
-                </form>
             </div>
+                <footer>
+                    <div className='footer-links-container'>
+                        <ul>
+                            <li className='list-link'><a href="#">Privacidad y terminos</a></li>
+                            <li className='list-link'><a href="#">Contactarnos</a></li>
+                            <li className='list-link'><a href="#"><ICONS.GlobeSimple/>Cambiar region</a></li>
+                        </ul>
+                    </div>
+                </footer>
         </div>
 
     )

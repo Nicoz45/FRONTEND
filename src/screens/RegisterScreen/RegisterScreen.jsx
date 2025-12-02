@@ -91,16 +91,16 @@ const RegisterScreen = () => {
                             : <button className='button-register'>Registrarse</button>
                     }
                 </form>
-                <div className="used-slack-link-container">
-                    <span>¿Ya estas usando Slack?</span>
-                    <Link to='/login'>Iniciar sesion en un espacio de trabajo existente</Link>
-                </div>
+                    <div className="used-slack-link-container">
+                        <span>¿Ya estas usando Slack?</span>
+                        <Link to='/login'>Iniciar sesion en un espacio de trabajo existente</Link>
+                    </div>
             </main>
             <footer className='footer-options-container'>
                 <div className='options-container'>
                     <a href="#">Privacidad y términos</a>
                     <a href="#">Contactarnos</a>
-                    <a href="#"><ICONS.GlobeSimple/>Cambiar region</a>
+                    <a href="#"><ICONS.GlobeSimple />Cambiar region</a>
                 </div>
             </footer>
         </div>

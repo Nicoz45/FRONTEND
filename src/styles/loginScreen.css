@@ -12,13 +12,15 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    max-width: 800px;
     gap: 20px;
+    padding: 5px;
+    margin-bottom: 230px;
 }
 
 .general-form-login-container h1 {
     font-size: 48px;
-    width: 800px;
+    width: 100%;
     text-align: center;
     margin-bottom: 40px;
 }
@@ -27,25 +29,30 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 350px;
+    align-items: center;
+    width: 100%;
     gap: 20px;
     color: #585858;
 }
 
-.form-imputs {
+.form-inputs {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     position: relative;
+    width: 50%;
 }
 
 .header-logo-slack-container {
     display: flex;
     flex-direction: row;
-    justify-content: right;
+    justify-content: center;
     align-items: center;
+    position: relative;
+    right: 30px;
     width: 100%;
-    gap: 610px;
-    padding: 48px 40px 40px;
+    padding: 48px 40px 40px 100px;
 }
 
 .register-container {
@@ -55,9 +62,80 @@
     color: #585858;
     font-size: 13px;
     gap: 5px;
+    position: absolute;
+    right: 20px;
 }
 
 .link-register {
     color: #3c1341;
     text-decoration: none;
+}
+
+.footer-links-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    max-width: 800px;
+    padding: 0px 10px 0px 10px;
+}
+
+.footer-links-container ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    list-style: none;
+    gap: 10px;
+}
+
+.list-link a{
+    display: flex;
+    color: #585858;
+    text-decoration: none;
+}
+
+.forgot-password-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+@media screen and (max-width: 768px) {
+    .general-form-login-container{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .general-form-login-container h1 {
+        font-size: 28px;
+    }
+
+}
+
+@media screen and (max-width: 620px) {
+    .register-container{
+        width: 80%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 500px;
+        /* left: 100px;
+        right: 100px; */
+    }
+    
+}
+
+@media screen and (max-width: 320px) {
+    .register-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 30px;
+    }
 }
