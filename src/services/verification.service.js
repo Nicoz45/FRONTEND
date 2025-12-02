@@ -1,9 +1,10 @@
+
 import ENVIRONMENT from "../config/environment.config";
 
 
 export async function sendVerificationCode() {
     try {
-        const res_http = await fetch(ENVIRONMENT.VITE_API_URL + '/api/verification/send-code',
+        const res_http = await fetch(ENVIRONMENT.VITE_API_URL + '/api/auth/verification/send-code/:user_id',
             {
                 method: 'POST',
                 headers:{
@@ -12,8 +13,10 @@ export async function sendVerificationCode() {
                 }
             }
         )
-        const response = await res_http.json()
+        const response = await res_http.json({html})
+        console.log('sendVerificationCode', response)
         return response
+
     } catch (error) {
         console.error('Error al enviar el código de verificación', error)
         throw new Error('Error interno en el servidor')
