@@ -8,7 +8,7 @@ import { AuthContext } from "../../Context/AuthContext";
 const HomeScreenComponent = () => {
     const navigate = useNavigate()
     const { sendRequest, response, loading, error } = useFetch()
-    const { onLogout, user} = useContext(AuthContext)
+    const { onLogout, user } = useContext(AuthContext)
 
     useEffect(
         () => {
@@ -25,7 +25,9 @@ const HomeScreenComponent = () => {
 
     return <div className="home-screen-component-container">
         <header className="general-header-container">
-            <h2>Slack</h2>
+            <div className="home-logo-container">
+                <img src="https://a.slack-edge.com/bv1-13/slack_logo-e971fd7.svg" alt="slack-logo" style={{ width: '100px' }}/>
+            </div>
             <nav className="home-nav-container">
                 <ul>
                     <li>Funciones</li>
@@ -34,37 +36,41 @@ const HomeScreenComponent = () => {
                 </ul>
             </nav>
             <div className="home-header-buttons">
-                <button>Hablar con ventas</button>
-                <button>Crear un nuevo espacio de trabajo</button>
+                <button className="talk-to-sales-button">HABLAR CON VENTAS</button>
+                <button className="create-workspace-header-button">CREAR UN NUEVO ESPACIO DE TRABAJO</button>
             </div>
         </header>
         <main className="home-screen-main-container">
             <div className="workspace-container">
                 <div className="email-user-reference">
-                    <h3>Espacios de trabajo de {user?.email}</h3>
+                    <h4>Espacios de trabajo de {user?.email}</h4>
                 </div>
                 {loading ? (
                     <span>Cargando...</span>
                 ) : error ? (
                     <span style={{ color: 'red' }}>Error: {error}</span>
                 ) : (
-                    <div>
+                    <div className="user-workspaces-container">
                         {response?.data?.workspaces?.length === 0 ? (<span>No hay workspaces creados aun</span>)
                             : (response && response.data.workspaces.map((workspace) => {
                                 return (
                                     <div key={workspace.workspace_id} className="workspace-selected">
                                         <div className="workspace-info">
                                             {workspace.workspace_url_image ? (
-                                                <img src={workspace.workspace_url_image} 
-                                                alt={workspace?.workspace?.name}
-                                                className="workspace-image"/>) :
+                                                <div className="image-container">
+                                                    <img src={workspace.workspace_url_image}
+                                                        alt={workspace?.workspace?.name}
+                                                        className="workspace-image" />
+                                                </div>) :
                                                 (
                                                     <div className="workspace-avatar">
                                                         {workspace.workspace_name?.charAt(0).toUpperCase()}
                                                     </div>
                                                 )}
-                                            <h2>{workspace.workspace_name}</h2>
-                                            <Link to={`/workspace/${workspace.workspace_id}`}>Iniciar slack</Link>
+                                            <h3>{workspace.workspace_name}</h3>
+                                        </div>
+                                        <div className="button-link-container">
+                                            <Link to={`/workspace/${workspace.workspace_id}`} className="button-link-to-slack">INICIAR SLACK</Link>
                                         </div>
                                     </div>
                                 )

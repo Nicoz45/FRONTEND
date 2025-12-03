@@ -2,8 +2,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     width: 100%;
+    height: 100vh;
     background-color: #4a154b;
 }
 
@@ -14,6 +14,16 @@
     align-items: center;
     width: 100%;
     padding: 0px 50px;
+    margin-bottom: 50px;
+}
+
+.home-screen-main-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding-left: 21%;
+    padding-right: 21%;
 }
 
 .workspace-container{
@@ -25,16 +35,23 @@
     border-radius: 10px;
     overflow: hidden;
     background-color: white;
+    margin: 0px 100px;
+}
+
+.user-workspaces-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .workspace-selected{
     display: flex;
+    width: 100%;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
     background-color: white;
-    padding: 20px;
+    padding: 15px;
     border-bottom: #f9f0ff 1px solid;
 }
 
@@ -56,7 +73,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    justify-content: start;
 }
 
 .email-user-reference{
@@ -64,5 +81,78 @@
     flex-direction: row;
     background-color: #f9f0ff;
     width: 100%;
+    padding: 30px 10px;
+}
+
+.email-user-reference h4{
+    font-weight: 400;
+}
+
+.image-container{
+    display: flex;
+    flex-direction: row;
+    width: 75px;
+    height: 75px;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-right: 20px;
+}
+
+.workspace-image{
+    width: 100%;
+    object-fit: cover;
+}
+
+.button-link-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 170px;
+}
+
+.button-link-to-slack{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border: 1px solid black;
+    padding: 14px;
+    background-color: #4a154b;
+    border-radius: 3px;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+
+.home-header-buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.talk-to-sales-button{
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    border: white 1px solid;
     padding: 10px;
+}
+
+.create-workspace-header-button{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 5px;
+    background: white;
+    text-wrap: wrap;
 }

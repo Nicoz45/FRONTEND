@@ -85,12 +85,12 @@ const LoginScreen = () => {
                             onChange={onInputChange} />
                         <label htmlFor="Password" className='label-text'>Password</label>
                     </div>
-                    {error && <span style={{ color: 'red' }}>{error}</span>}
-                    {response && <span style={{ color: 'green' }}>Iniciando sesion</span>}
+                    {error && <span style={{ color: 'red' }}className='little-text'>{error}</span>}
+                    {response && <span style={{ color: 'green' }}className='little-text'>Iniciando sesion</span>}
                     {
                         loading
-                        ? <button disabled>Login...</button>
-                        : <button className='button-register'>Login</button>
+                        ? <button disabled className='button-login'>Login...</button>
+                        : <button className='button-login'>Login</button>
                     }
                     <div className='forgot-password-container'>
                         <span className='forgot-password'>¿Tienes problemas para iniciar sesion?</span>

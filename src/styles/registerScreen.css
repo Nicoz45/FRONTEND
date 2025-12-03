@@ -66,6 +66,8 @@
 }
 
 .little-text{
+    display: flex;
+    max-width: 350px;
     font-size: 12px;
     background-color: rgba(255, 255, 255, 0.384);
     padding: 5px;
@@ -146,7 +148,7 @@
         display: flex;
         flex-direction: column;
         width: 100%;
-        margin-bottom: 120px;
+        margin-bottom: 110px;
     }
 }
 
@@ -165,7 +167,7 @@
     }
     .title-and-form-container{
         display: flex;
-        margin-bottom: 70px;
+        margin-bottom: 30px;
     }
     .title{
         font-size: 30px;
