@@ -92,11 +92,11 @@ const LoginScreen = () => {
                         ? <button disabled>Login...</button>
                         : <button className='button-register'>Login</button>
                     }
-                </form>
                     <div className='forgot-password-container'>
                         <span className='forgot-password'>¿Tienes problemas para iniciar sesion?</span>
                         <Link to='/forgot-password'>Recuperar contraseña</Link>
                     </div>
+                </form>
             </div>
                 <footer>
                     <div className='footer-links-container'>

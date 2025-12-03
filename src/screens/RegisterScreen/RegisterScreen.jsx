@@ -90,11 +90,11 @@ const RegisterScreen = () => {
                             ? <button className='button-register' disabled>Registrando...</button>
                             : <button className='button-register'>Registrarse</button>
                     }
-                </form>
                     <div className="used-slack-link-container">
                         <span>¿Ya estas usando Slack?</span>
                         <Link to='/login'>Iniciar sesion en un espacio de trabajo existente</Link>
                     </div>
+                </form>
             </main>
             <footer className='footer-options-container'>
                 <div className='options-container'>
