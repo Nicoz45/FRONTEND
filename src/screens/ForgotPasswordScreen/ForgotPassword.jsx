@@ -2,7 +2,7 @@ import React from 'react'
 import { forgotPassword } from '../../services/authService'
 import useForm from '../../Hooks/useForm'
 import useFetch from '../../Hooks/useFetch'
-import { Link } from 'react-router'
+import { Link } from 'react-router-dom'
 import '../../styles/forgotPassword.css'
 import '../../styles/index.css'
 

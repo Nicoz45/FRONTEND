@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from 'react'
-import { useNavigate } from 'react-router'
+import { useNavigate } from 'react-router-dom'
 import { AuthContext } from '../../Context/AuthContext'
 import useVerificationCode from '../../Hooks/useVerificationCode'
 

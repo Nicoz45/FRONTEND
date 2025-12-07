@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useNavigate } from 'react-router'
+import { useNavigate } from 'react-router-dom'
 import { sendVerificationCode, verifyCode } from '../services/verification.service'
 import useFetch from './useFetch'
 

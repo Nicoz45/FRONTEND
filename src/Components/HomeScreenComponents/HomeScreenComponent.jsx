@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import useFetch from "../../Hooks/useFetch";
 import '../../styles/homeScreen.css'
-import { data, Link, useNavigate } from "react-router";
+import { data, Link, useNavigate } from "react-router-dom";
 import { getWorkspaces } from "../../services/workspace.service";
 import { AuthContext } from "../../Context/AuthContext";
 

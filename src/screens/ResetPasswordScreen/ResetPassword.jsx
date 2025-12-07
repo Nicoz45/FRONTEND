@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import useFetch from '../../Hooks/useFetch'
-import { Link, useNavigate, useParams } from 'react-router'
+import { Link, useNavigate, useParams } from 'react-router-dom'
 import { resetPassword } from '../../services/authService'
 import useForm from '../../Hooks/useForm'
 

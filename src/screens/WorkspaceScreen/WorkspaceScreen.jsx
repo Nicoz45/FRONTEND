@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from 'react'
-import { useParams } from 'react-router'
+import { useParams } from 'react-router-dom'
 import useFetch from '../../Hooks/useFetch'
 import { getWorkspaceById } from '../../services/workspace.service'
 import '../../styles/workspaceScreen.css'

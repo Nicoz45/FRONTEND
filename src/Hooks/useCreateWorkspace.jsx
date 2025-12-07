@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { useNavigate } from 'react-router'
+import { useNavigate } from 'react-router-dom'
 import useFetch from './useFetch'
 import { createWorkspace } from '../services/workspace.service'
 import useForm from './useForm'

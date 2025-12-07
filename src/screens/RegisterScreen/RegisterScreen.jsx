@@ -5,7 +5,7 @@ import useForm from '../../Hooks/useForm.jsx'
 import { register } from '../../services/authService.js'
 import useFetch from '../../Hooks/useFetch.jsx'
 import ICONS from '../../constants/Icons.jsx'
-import { Link } from 'react-router'
+import { Link } from 'react-router-dom'
 
 const RegisterScreen = () => {
     //Guardamos los campos que tendra nuestro form
