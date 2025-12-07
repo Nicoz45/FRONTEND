@@ -68,7 +68,7 @@ export async function forgotPassword(email){
 
 export async function resetPassword(token, password){
     try {
-        const body = {password, token}
+        const body = {password}
         const res_http = await fetch(ENVIRONMENT.VITE_API_URL + `/api/auth/reset-password/${token}`,
             {
             method: 'POST',

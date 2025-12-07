@@ -19,7 +19,7 @@ function App() {
                 <Route path='/login' element={<LoginScreen />} />
                 <Route path='/register' element={<RegisterScreen />} />
                 <Route path='/forgot-password' element={<ForgotPasswordScreen />} />
-                <Route path='/reset-password/:token' element={<ResetPasswordScreen />} />
+                <Route path='/reset-password/:resetToken' element={<ResetPasswordScreen />} />
 
                 <Route element={<AuthMiddleware />}>
                     <Route path='/Home' element={<HomeScreen />} />
