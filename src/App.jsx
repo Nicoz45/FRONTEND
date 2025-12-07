@@ -18,12 +18,13 @@ function App() {
                 <Route path='/' element={<LoginScreen />} />
                 <Route path='/login' element={<LoginScreen />} />
                 <Route path='/register' element={<RegisterScreen />} />
-                <Route path='/forgot-password' element={<ForgotPasswordScreen/>}/>
-                <Route path='/reset-password/:token' element={<ResetPasswordScreen/>}/>
-                <Route element={<AuthMiddleware/>}>
+                <Route path='/forgot-password' element={<ForgotPasswordScreen />} />
+                <Route path='/reset-password/:token' element={<ResetPasswordScreen />} />
+                
+                <Route element={<AuthMiddleware />}>
                     <Route path='/Home' element={<HomeScreen />} />
-                    <Route path='verify-code' element={<VerificationCodeScreen/>}/>
-                    <Route path='create-workspace' element={<CreateWorkspaceScreen/>}/>
+                    <Route path='verify-code' element={<VerificationCodeScreen />} />
+                    <Route path='create-workspace' element={<CreateWorkspaceScreen />} />
                     <Route path='/workspace/:workspace_id' element={<WorkspaceScreen />} />
                     {/* <Route path='/workspace/:workspace_id/channel/:channel_id' element={<ChannelScreen />} /> */}
                 </Route>

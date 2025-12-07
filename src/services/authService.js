@@ -68,8 +68,8 @@ export async function forgotPassword(email){
 
 export async function resetPassword(token, password){
     try {
-        const body = {password}
-        const res_http = await fetch(ENVIRONMENT.VITE_API_URL + `/api/auth/reset-password/${token}`,
+        const body = {password, token}
+        const res_http = await fetch(ENVIRONMENT.VITE_API_URL + `/reset-password/${token}`,
             {
             method: 'POST',
             headers: {
@@ -78,7 +78,9 @@ export async function resetPassword(token, password){
             body: JSON.stringify(body)
         }
         )
+        console.log(res_http)
         const response = await res_http.json()
+        console.log(response)
         return response
     } catch (error) {
         console.error('Error al restablecer la contraseña', error)
