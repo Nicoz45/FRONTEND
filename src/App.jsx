@@ -1,5 +1,5 @@
 import React from 'react'
-import { Routes, Route, useParams } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 import HomeScreen from './screens/HomeScreen/HomeScreen.jsx'
 import LoginScreen from './screens/LoginScreen/LoginScreen.jsx'
 import RegisterScreen from './screens/RegisterScreen/RegisterScreen.jsx'
@@ -12,7 +12,6 @@ import VerificationCodeScreen from './screens/VerificationScreens/VerificationSc
 import CreateWorkspaceScreen from './screens/CreateWorkspaceScreen/CreateWorkspaceScreen.jsx'
 
 function App() {
-    const {token} = useParams()
     return (
         <div>
             <Routes>
@@ -20,7 +19,7 @@ function App() {
                 <Route path='/login' element={<LoginScreen />} />
                 <Route path='/register' element={<RegisterScreen />} />
                 <Route path='/forgot-password' element={<ForgotPasswordScreen />} />
-                <Route path={`/reset-password/${token}`} element={<ResetPasswordScreen />} />
+                <Route path='/reset-password/:token' element={<ResetPasswordScreen />} />
 
                 <Route element={<AuthMiddleware />}>
                     <Route path='/Home' element={<HomeScreen />} />
