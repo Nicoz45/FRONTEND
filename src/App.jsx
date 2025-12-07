@@ -1,5 +1,5 @@
 import React from 'react'
-import { Routes, Route } from 'react-router'
+import { Routes, Route } from 'react-router-dom'
 import HomeScreen from './screens/HomeScreen/HomeScreen.jsx'
 import LoginScreen from './screens/LoginScreen/LoginScreen.jsx'
 import RegisterScreen from './screens/RegisterScreen/RegisterScreen.jsx'
