@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import '../../styles/channelListComponent.css'
 import useFetch from '../../Hooks/useFetch'
 import { getWorkspaceById } from '../../services/workspace.service'
-import { useParams } from 'react-router'
+import { useParams } from 'react-router-dom'
 
 const ChannelListComponent = () => {
     const {workspace_id} = useParams()
