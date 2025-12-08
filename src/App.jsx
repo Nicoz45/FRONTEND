@@ -29,35 +29,6 @@ function App() {
                     {/* <Route path='/workspace/:workspace_id/channel/:channel_id' element={<ChannelScreen />} /> */}
                 </Route>
             </Routes>
-            <ErrorBoundary>
-                <Routes>
-                    <Route path='*' element={<NotFound />} />
-                </Routes>
-            </ErrorBoundary>
-        </div>
-    )
-}
-
-function ErrorBoundary({ children }) {
-    const [error, setError] = useState(null)
-
-    if (error) {
-        return (
-            <div>
-                <h1>Error</h1>
-                <p>{error.message}</p>
-            </div>
-        )
-    }
-
-    return children
-}
-
-function NotFound() {
-    return (
-        <div>
-            <h1>404: Not Found</h1>
-            <p>Página no encontrada</p>
         </div>
     )
 }
