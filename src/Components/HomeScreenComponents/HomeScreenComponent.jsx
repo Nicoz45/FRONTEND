@@ -25,16 +25,20 @@ const HomeScreenComponent = () => {
 
     return <div className="home-screen-component-container">
         <header className="general-header-container">
-            <div className="home-logo-container">
-                <img src="https://a.slack-edge.com/bv1-13/slack_logo-e971fd7.svg" alt="slack-logo" style={{ width: '100px' }}/>
+            <div className="logo-and-nav-container">
+                <div className="home-logo-container">
+                    <img src="https://a.slack-edge.com/38f0e7c/marketing/img/nav/slack-salesforce-logo-nav-white.png" alt="slack-logo" style={{ width: '100px' }} />
+                </div>
+                <div>
+                    <nav className="home-nav-container">
+                        <ul>
+                            <li>Funciones</li>
+                            <li>Soluciones</li>
+                            <li onClick={onLogout} style={{ cursor: 'pointer' }}>Logout</li>
+                        </ul>
+                    </nav>
+                </div>
             </div>
-            <nav className="home-nav-container">
-                <ul>
-                    <li>Funciones</li>
-                    <li>Soluciones</li>
-                    <li onClick={onLogout} style={{ cursor: 'pointer' }}>Logout</li>
-                </ul>
-            </nav>
             <div className="home-header-buttons">
                 <button className="talk-to-sales-button">HABLAR CON VENTAS</button>
                 <button className="create-workspace-header-button">CREAR UN NUEVO ESPACIO DE TRABAJO</button>

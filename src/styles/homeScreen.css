@@ -12,9 +12,17 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
+    width: calc(100px + 70%);
     padding: 0px 50px;
     margin-bottom: 50px;
+}
+
+.logo-and-nav-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    gap: 20px;
 }
 
 .home-screen-main-container{
@@ -24,6 +32,30 @@
     width: 100%;
     padding-left: 21%;
     padding-right: 21%;
+}
+
+.home-nav-container{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-nav-container ul{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    list-style: none;
+    gap: 30px;
+    color: white;
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.home-nav-container li{
+    cursor: pointer;
+    list-style: none;
 }
 
 .workspace-container{
@@ -136,14 +168,20 @@
 }
 
 .talk-to-sales-button{
-    width: 70%;
+    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     background: transparent;
     border: white 1px solid;
-    padding: 10px;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: 400;
+    text-wrap: nowrap;
+    color: white;
+    padding: 10px 15px;
+    cursor: pointer;
 }
 
 .create-workspace-header-button{
@@ -152,7 +190,12 @@
     align-items: center;
     justify-content: center;
     width: 100%;
-    padding: 5px;
+    border-radius: 5px;
+    padding: 10px 15px;
     background: white;
-    text-wrap: wrap;
+    text-wrap: nowrap;
+    font-size: 15px;
+    font-weight: 400;
+    color: #4a154b;
+    text-align: center;
 }
