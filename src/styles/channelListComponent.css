@@ -128,6 +128,22 @@
     background: rgba(0, 0, 0, 0.3);
 }
 
+.channel-name-input:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.error-message-channel {
+    display: block;
+    color: #ff6b6b;
+    font-size: 12px;
+    margin-top: -4px;
+    margin-bottom: 8px;
+    padding: 4px 8px;
+    background: rgba(255, 107, 107, 0.1);
+    border-radius: 4px;
+}
+
 .form-buttons {
     display: flex;
     gap: 8px;
@@ -150,8 +166,13 @@
     color: #fff;
 }
 
-.btn-create:hover {
+.btn-create:hover:not(:disabled) {
     background: #4a154b;
+}
+
+.btn-create:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
 }
 
 .btn-cancel {
@@ -160,9 +181,14 @@
     border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.btn-cancel:hover {
+.btn-cancel:hover:not(:disabled) {
     background: rgba(255, 255, 255, 0.1);
     color: #fff;
+}
+
+.btn-cancel:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
 }
 
 /* Channels List */

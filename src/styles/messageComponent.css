@@ -14,7 +14,6 @@
     height: 36px;
     min-width: 36px;
     border-radius: 4px;
-    background: linear-gradient(135deg, #611f69, #4a154b);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -22,6 +21,7 @@
     font-weight: 700;
     font-size: 14px;
     user-select: none;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .message-content {
@@ -58,24 +58,21 @@
 
 /* Own Messages Styling */
 .own-message {
-    background: rgba(97, 31, 105, 0.05);
+    background: rgba(97, 31, 105, 0.03);
 }
 
 .own-message:hover {
-    background: rgba(97, 31, 105, 0.08);
-}
-
-.own-message .message-avatar {
-    background: linear-gradient(135deg, #007a5a, #005a41);
+    background: rgba(97, 31, 105, 0.06);
 }
 
 .own-message .message-author {
     color: #611f69;
+    font-weight: 800;
 }
 
-/* Message Groups (same user consecutive messages) */
+/* Message Groups */
 .message-item + .message-item {
-    margin-top: 4px;
+    margin-top: 0;
 }
 
 .message-group {
@@ -110,10 +107,12 @@
 /* Loading Messages */
 .messages-loading {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 40px;
     color: #616061;
+    gap: 12px;
 }
 
 .messages-loading-spinner {

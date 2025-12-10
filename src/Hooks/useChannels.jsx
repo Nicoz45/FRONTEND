@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import useFetch from './useFetch'
-import { createChannel, getChannelMessages, sendMessage } from '../services/channels.service'
+import { getChannelMessages, sendMessage } from '../services/channels.service'
 
 const useChannel = (workspace_id, channel_id) => {
     const [messages, setMessages] = useState([])
@@ -24,6 +24,8 @@ const useChannel = (workspace_id, channel_id) => {
     useEffect(() => {
         if (workspace_id && channel_id) {
             fetchMessages(() => getChannelMessages(workspace_id, channel_id))
+        } else {
+            setMessages([])
         }
     }, [workspace_id, channel_id])
 
@@ -71,7 +73,11 @@ const useChannel = (workspace_id, channel_id) => {
         handleSendMessage,
         handleMessageInputChange,
         handleKeyPress,
-        refreshMessages: () => fetchMessages(() => getChannelMessages(workspace_id, channel_id))
+        refreshMessages: () => {
+            if (workspace_id && channel_id) {
+                fetchMessages(() => getChannelMessages(workspace_id, channel_id))
+            }
+        }
     }
 }
 

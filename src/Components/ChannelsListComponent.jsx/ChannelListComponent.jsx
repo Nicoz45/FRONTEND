@@ -1,18 +1,30 @@
 import React, { useState } from 'react'
+import { useParams } from 'react-router-dom'
 import '../../styles/channelListComponent.css'
-import ICONS from '../../constants/Icons'
+import useFetch from '../../Hooks/useFetch'
+import { createChannel } from '../../services/channels.service'
 
-const ChannelListComponent = ({ workspace, channels, selectedChannel, onChannelSelect }) => {
+const ChannelListComponent = ({ workspace, channels, selectedChannel, onChannelSelect, onChannelCreated }) => {
+    const { workspace_id } = useParams()
     const [showCreateChannel, setShowCreateChannel] = useState(false)
     const [newChannelName, setNewChannelName] = useState('')
+    const { sendRequest, loading, error } = useFetch()
 
-    const handleCreateChannel = (e) => {
+    const handleCreateChannel = async (e) => {
         e.preventDefault()
         if (newChannelName.trim()) {
-            // Aquí irá la lógica para crear un canal
-            console.log('Crear canal:', newChannelName)
-            setNewChannelName('')
-            setShowCreateChannel(false)
+            try {
+                await sendRequest(() => createChannel(workspace_id, newChannelName.trim()))
+                setNewChannelName('')
+                setShowCreateChannel(false)
+                // Notificar al componente padre que se creó un canal
+                if (onChannelCreated) {
+                    onChannelCreated()
+                }
+            } catch (err) {
+                console.error('Error al crear canal:', err)
+                alert('Error al crear el canal. Por favor, intenta de nuevo.')
+            }
         }
     }
 
@@ -21,7 +33,7 @@ const ChannelListComponent = ({ workspace, channels, selectedChannel, onChannelS
             <div className='workspace-sidebar'>
                 {/* Header del workspace */}
                 <div className='workspace-header'>
-                    <h2 className='workspace-name'>{workspace?.name}</h2>
+                    <h2 className='workspace-name'>{workspace?.name || 'Workspace'}</h2>
                     <button className='workspace-options-btn'>⚙️</button>
                 </div>
 
@@ -48,9 +60,17 @@ const ChannelListComponent = ({ workspace, channels, selectedChannel, onChannelS
                                 onChange={(e) => setNewChannelName(e.target.value)}
                                 className='channel-name-input'
                                 autoFocus
+                                disabled={loading}
                             />
+                            {error && <span className='error-message-channel'>{error}</span>}
                             <div className='form-buttons'>
-                                <button type="submit" className='btn-create'>Crear</button>
+                                <button 
+                                    type="submit" 
+                                    className='btn-create'
+                                    disabled={loading || !newChannelName.trim()}
+                                >
+                                    {loading ? 'Creando...' : 'Crear'}
+                                </button>
                                 <button 
                                     type="button" 
                                     onClick={() => {
@@ -58,6 +78,7 @@ const ChannelListComponent = ({ workspace, channels, selectedChannel, onChannelS
                                         setNewChannelName('')
                                     }}
                                     className='btn-cancel'
+                                    disabled={loading}
                                 >
                                     Cancelar
                                 </button>

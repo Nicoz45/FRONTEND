@@ -13,19 +13,16 @@ const MessageComponent = ({ message, isOwnMessage }) => {
         const date = new Date(timestamp)
         const today = new Date()
         
-        // Si es hoy
         if (date.toDateString() === today.toDateString()) {
             return 'Hoy'
         }
         
-        // Si es ayer
         const yesterday = new Date(today)
         yesterday.setDate(yesterday.getDate() - 1)
         if (date.toDateString() === yesterday.toDateString()) {
             return 'Ayer'
         }
         
-        // Si es otra fecha
         return date.toLocaleDateString('es-ES', { 
             day: 'numeric', 
             month: 'long',
@@ -33,15 +30,35 @@ const MessageComponent = ({ message, isOwnMessage }) => {
         })
     }
 
+    // Generar color del avatar basado en el nombre
+    const getAvatarColor = (name) => {
+        const colors = [
+            '#611f69', '#007a5a', '#e01e5a', '#36c5f0', 
+            '#2eb67d', '#ecb22e', '#e01e5a', '#4a154b'
+        ]
+        const index = name?.charCodeAt(0) % colors.length || 0
+        return colors[index]
+    }
+
+    const avatarColor = getAvatarColor(message.user_name)
+
     return (
         <div className={`message-item ${isOwnMessage ? 'own-message' : ''}`}>
-            <div className="message-avatar">
+            <div 
+                className="message-avatar" 
+                style={{ background: avatarColor }}
+            >
                 {message.user_name?.charAt(0).toUpperCase() || 'U'}
             </div>
             <div className="message-content">
                 <div className="message-header">
-                    <span className="message-author">{message.user_name || 'Usuario'}</span>
-                    <span className="message-time" title={formatDate(message.created_at)}>
+                    <span className="message-author">
+                        {message.user_name || 'Usuario'}
+                    </span>
+                    <span 
+                        className="message-time" 
+                        title={formatDate(message.created_at)}
+                    >
                         {formatTime(message.created_at)}
                     </span>
                 </div>
