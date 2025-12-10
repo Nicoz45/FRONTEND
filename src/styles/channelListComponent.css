@@ -1,7 +1,290 @@
-.general-aside-container{
-    width: 100%;
+.general-aside-container {
+    width: 260px;
+    min-width: 260px;
     height: 100%;
     display: flex;
-    border: 1px solid #4b2f50;
-    background: linear-gradient(to bottom, #201124, #180d1b);
+    flex-direction: column;
+    background: linear-gradient(to bottom, #3a1040, #1d021e);
+    border-right: 1px solid #4b2f50;
+    overflow: hidden;
+}
+
+.workspace-sidebar {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 12px;
+}
+
+/* Workspace Header */
+.workspace-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px;
+    margin-bottom: 16px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.workspace-header:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.workspace-name {
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.workspace-options-btn {
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: background 0.3s ease;
+}
+
+.workspace-options-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Sections */
+.channels-section,
+.direct-messages-section {
+    margin-bottom: 24px;
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 12px;
+    margin-bottom: 4px;
+}
+
+.section-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.7);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.add-channel-btn,
+.add-dm-btn {
+    background: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 20px;
+    cursor: pointer;
+    padding: 0 8px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    line-height: 1;
+}
+
+.add-channel-btn:hover,
+.add-dm-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+/* Create Channel Form */
+.create-channel-form {
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    margin-bottom: 8px;
+}
+
+.channel-name-input {
+    width: 100%;
+    padding: 8px 12px;
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    color: #fff;
+    font-size: 14px;
+    outline: none;
+    margin-bottom: 8px;
+}
+
+.channel-name-input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.channel-name-input:focus {
+    border-color: #611f69;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.form-buttons {
+    display: flex;
+    gap: 8px;
+    justify-content: flex-end;
+}
+
+.btn-create,
+.btn-cancel {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-create {
+    background: #611f69;
+    color: #fff;
+}
+
+.btn-create:hover {
+    background: #4a154b;
+}
+
+.btn-cancel {
+    background: transparent;
+    color: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.btn-cancel:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+/* Channels List */
+.channels-list,
+.dm-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    overflow-y: auto;
+    max-height: 400px;
+}
+
+.channel-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 15px;
+}
+
+.channel-item:hover {
+    background: rgba(255, 255, 255, 0.08);
+    color: #fff;
+}
+
+.channel-item.selected {
+    background: #611f69;
+    color: #fff;
+    font-weight: 600;
+}
+
+.channel-hash {
+    font-size: 16px;
+    font-weight: 700;
+    opacity: 0.8;
+}
+
+.channel-name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* No Channels State */
+.no-channels {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 32px 16px;
+    text-align: center;
+}
+
+.no-channels p {
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 16px;
+    font-size: 14px;
+}
+
+.create-first-channel-btn {
+    padding: 8px 16px;
+    background: #611f69;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.create-first-channel-btn:hover {
+    background: #4a154b;
+    transform: translateY(-1px);
+}
+
+/* Coming Soon */
+.coming-soon {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 13px;
+    text-align: center;
+    padding: 16px;
+    font-style: italic;
+}
+
+/* Scrollbar Styling */
+.channels-list::-webkit-scrollbar,
+.dm-list::-webkit-scrollbar {
+    width: 8px;
+}
+
+.channels-list::-webkit-scrollbar-track,
+.dm-list::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+}
+
+.channels-list::-webkit-scrollbar-thumb,
+.dm-list::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+}
+
+.channels-list::-webkit-scrollbar-thumb:hover,
+.dm-list::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .general-aside-container {
+        width: 100%;
+        max-height: 40vh;
+        border-right: none;
+        border-bottom: 1px solid #4b2f50;
+    }
+
+    .workspace-sidebar {
+        overflow-y: auto;
+    }
 }
