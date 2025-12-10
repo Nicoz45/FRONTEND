@@ -51,8 +51,8 @@
 }
 
 .search-toolbar {
-    flex: 1;
-    max-width: 600px;
+    display: flex;
+    width: 700px;
 }
 
 .search-input {

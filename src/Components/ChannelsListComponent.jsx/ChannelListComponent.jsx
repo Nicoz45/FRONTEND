@@ -22,7 +22,6 @@ const ChannelListComponent = ({ workspace, channels, selectedChannel, onChannelS
                     onChannelCreated()
                 }
             } catch (err) {
-                console.error('Error al crear canal:', err)
                 alert('Error al crear el canal. Por favor, intenta de nuevo.')
             }
         }

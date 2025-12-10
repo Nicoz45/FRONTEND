@@ -42,6 +42,11 @@ const VerificationCodeScreen = () => {
 
     return (
         <div className='verification-code-container'>
+            <header className='header-logo-container'>
+                <div className='logo-container'>
+                    <img src="https://a.slack-edge.com/bv1-13/slack_logo-e971fd7.svg" alt="slack-logo" style={{ width: '100px' }} />
+                </div>
+            </header>
             <div className='verification-card'>
                 <div className='verification-header'>
                     <h1>Verificación de Código</h1>

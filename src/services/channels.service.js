@@ -22,7 +22,6 @@ export async function createChannel(workspace_id, name) {
         const response = await response_http.json()
         return response
     } catch (error) {
-        console.error('Error en createChannel:', error)
         throw error
     }
 }
@@ -47,7 +46,6 @@ export async function getChannelMessages(workspace_id, channel_id) {
         const response = await response_http.json()
         return response
     } catch (error) {
-        console.error('Error en getChannelMessages:', error)
         throw error
     }
 }
@@ -74,7 +72,6 @@ export async function sendMessage(workspace_id, channel_id, content) {
         const response = await response_http.json()
         return response
     } catch (error) {
-        console.error('Error en sendMessage:', error)
         throw error
     }
 }

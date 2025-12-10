@@ -22,10 +22,7 @@ const HomeScreenComponent = () => {
     }, [refreshKey])
 
     useEffect(() => {
-        if (response) {
-            console.log('Response completo:', response)
-            console.log('Workspaces:', response?.data?.workspaces)
-        }
+        // Effect para observar cambios en response
     }, [response])
 
     // Recargar workspaces cuando la ventana recupera el foco
@@ -44,13 +41,10 @@ const HomeScreenComponent = () => {
     const handleDeleteWorkspace = async (workspace_id, workspace_name) => {
         if (window.confirm(`¿Estás seguro de que quieres eliminar "${workspace_name}"?`)) {
             try {
-                console.log('Eliminando workspace:', workspace_id)
                 const result = await deleteWorkspace(workspace_id)
-                console.log('Resultado eliminación:', result)
                 // Recargar la lista después de eliminar
                 fetchWorkspaces()
             } catch (error) {
-                console.error('Error al eliminar:', error)
                 alert('Error al eliminar el workspace: ' + (error?.message || 'Error desconocido'))
             }
         }
@@ -96,7 +90,6 @@ const HomeScreenComponent = () => {
                 ) : (
                     <div className="user-workspaces-container">
                         {response && response.data.workspaces.filter(w => w.workspace_id).map((workspace) => {
-                            console.log('Workspace object:', workspace)
                             return (
                                 <div key={workspace.workspace_id} className="workspace-selected">
                                     <div className="workspace-info">

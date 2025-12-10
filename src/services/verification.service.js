@@ -14,11 +14,9 @@ export async function sendVerificationCode() {
             }
         )
         const response = await res_http.json()
-        console.log('sendVerificationCode', response)
         return response
 
     } catch (error) {
-        console.error('Error al enviar el código de verificación', error)
         throw new Error('Error interno en el servidor')
     }
 }
@@ -38,7 +36,6 @@ export async function verifyCode(code){
         const response = await res_http.json()
         return response
     } catch (error) {
-        console.error('Error al verificar el código de verificación', error)
         throw new Error('Error interno en el servidor')
     }
 }

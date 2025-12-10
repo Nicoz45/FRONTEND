@@ -20,7 +20,6 @@ export async function register(username, email, password) {
         return response
     }
     catch (error) {
-        console.error('Error al registrar', error)
         throw new Error('Error interno en el servidor')
     }
 }
@@ -40,7 +39,6 @@ export async function login(email, password){
         return response
     }
     catch(error){
-        console.error('Error al registrar', error)
         throw new Error('Error interno en el servidor')
     }
     
@@ -61,7 +59,6 @@ export async function forgotPassword(email){
         const response = await res_http.json()
         return response
     } catch (error) {
-        console.error('Error al solicitar el cambio de contraseña', error)
         throw new Error('Error interno en el servidor')
     }
 }
@@ -78,12 +75,9 @@ export async function resetPassword(token, password){
             body: JSON.stringify(body)
         }
         )
-        console.log(res_http)
         const response = await res_http.json()
-        console.log(response)
         return response
     } catch (error) {
-        console.error('Error al restablecer la contraseña', error)
         throw new Error('Error interno en el servidor')
     }
 }

@@ -28,7 +28,6 @@ export async function getWorkspaceById(workspaces_id){
                 }
             }
         )
-        console.log(response_http)
         if(!response_http.ok){
             const errorData = await response_http.json();
             throw new Error(errorData.message || 'Error al obtener el workspace')
@@ -36,7 +35,6 @@ export async function getWorkspaceById(workspaces_id){
         const response = await response_http.json()
         return response
     } catch (error) {
-        console.error('Error en getWorkspaceId:', error )
         throw Error
     }
 }
