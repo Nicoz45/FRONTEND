@@ -1,23 +1,23 @@
-.home-screen-component-container{
+.home-screen-component-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     background-color: #4a154b;
 }
 
-.general-header-container{
+.general-header-container {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    width: calc(100px + 70%);
-    padding: 0px 50px;
+    width: calc(100px + 73%);
+    padding: 20px 50px;
     margin-bottom: 50px;
 }
 
-.logo-and-nav-container{
+.logo-and-nav-container {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -25,16 +25,32 @@
     gap: 20px;
 }
 
-.home-screen-main-container{
+.home-screen-main-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
-    padding-left: 21%;
-    padding-right: 21%;
 }
 
-.home-nav-container{
+.tittle-hello-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    width: 60%;
+}
+
+.tittle-hello-container h1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    text-align: start;
+    font-size: 48px;
+    font-weight: 600;
+    color: white;
+}
+
+.home-nav-container {
     display: flex;
     flex-direction: row;
     width: 100%;
@@ -42,41 +58,52 @@
     align-items: center;
 }
 
-.home-nav-container ul{
+.home-nav-container ul {
     display: flex;
     flex-direction: row;
     align-items: center;
     list-style: none;
     gap: 30px;
     color: white;
-    font-size: 17px;
-    font-weight: 500;
+    font-size: 14px;
+    font-weight: 600;
+    margin-left: 20px;
 }
 
-.home-nav-container li{
+.home-nav-container li {
     cursor: pointer;
     list-style: none;
+    gap: 1px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
 }
 
-.workspace-container{
+.arrow-down {
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.workspace-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 100%;
+    width: calc(340px + 40%);
     height: auto;
     border-radius: 10px;
     overflow: hidden;
     background-color: white;
-    margin: 0px 100px;
 }
 
-.user-workspaces-container{
+.user-workspaces-container {
     width: 100%;
     display: flex;
     flex-direction: column;
 }
 
-.workspace-selected{
+.workspace-selected {
     display: flex;
     width: 100%;
     flex-direction: row;
@@ -87,20 +114,35 @@
     border-bottom: #f9f0ff 1px solid;
 }
 
-.create-workspace-container{
+.create-workspace-container {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
+    width: calc(340px + 40%);
+    height: 90px;
     margin-top: 50px;
+    margin-bottom: 50px;
     background-color: white;
     border-radius: 10px;
-    padding: 20px;
     box-shadow: 0px 0px 5px rgba(167, 167, 167, 0.74);
+    overflow: visible;
 }
 
-.workspace-info{
+.img-and-text-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.img-and-text-container img {
+    position: relative;
+    top: 15px;
+}
+
+.workspace-info {
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -108,7 +150,7 @@
     justify-content: start;
 }
 
-.email-user-reference{
+.email-user-reference {
     display: flex;
     flex-direction: row;
     background-color: #f9f0ff;
@@ -116,11 +158,11 @@
     padding: 30px 10px;
 }
 
-.email-user-reference h4{
+.email-user-reference h4 {
     font-weight: 400;
 }
 
-.image-container{
+.image-container {
     display: flex;
     flex-direction: row;
     width: 75px;
@@ -130,36 +172,38 @@
     margin-right: 20px;
 }
 
-.workspace-image{
+.workspace-image {
     width: 100%;
     object-fit: cover;
 }
 
-.button-link-container{
+.button-link-container {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    width: 170px;
+    width: 180px;
 }
 
-.button-link-to-slack{
+.button-link-to-slack {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     width: 100%;
-    border: 1px solid black;
     padding: 14px;
+    border: 1px solid black;
     background-color: #4a154b;
     border-radius: 3px;
     color: white;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 14px;
     letter-spacing: 1px;
+    font-weight: 600;
+    text-align: center;
 }
 
-.home-header-buttons{
+.home-header-buttons {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -167,7 +211,7 @@
     gap: 20px;
 }
 
-.talk-to-sales-button{
+.talk-to-sales-button {
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -176,26 +220,113 @@
     background: transparent;
     border: white 1px solid;
     border-radius: 5px;
-    font-size: 15px;
-    font-weight: 400;
+    font-size: 14px;
+    font-weight: 500;
     text-wrap: nowrap;
     color: white;
-    padding: 10px 15px;
+    padding: 12px 17px;
     cursor: pointer;
+    letter-spacing: 1px;
+    transition: all 0.2s ease-in-out;
 }
 
-.create-workspace-header-button{
+.talk-to-sales-button:hover {
+    box-shadow: inset 0 0 0 1px white;
+}
+
+.create-workspace-header-button {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     width: 100%;
+    border: 1px solid white;
     border-radius: 5px;
-    padding: 10px 15px;
+    padding: 12px 17px;
     background: white;
     text-wrap: nowrap;
-    font-size: 15px;
-    font-weight: 400;
+    font-size: 14px;
+    font-weight: 500;
     color: #4a154b;
     text-align: center;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.create-workspace-header-button:hover {
+    border: 1px solid #4a154b;
+    box-shadow: inset 0 0 0 1px #4a154b;
+}
+
+.button-create-workspace-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-right: 15px;
+}
+
+.button-create {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 15px 17px;
+    border: #4a154b 1px solid;
+    border-radius: 5px;
+    color: #4a154b;
+    font-weight: 600;
+}
+
+.download-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: calc(340px + 40%);
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.075);
+    color: white;
+    margin: 50px 0px;
+}
+
+.image-and-text-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-download-container{
+    display: flex;
+    width: 75px;
+    height: 60px;
+    border-radius: 5px;
+    margin-right: 20px
+}
+
+.download-image{
+    width: 100%;
+    object-fit: cover;
+}
+
+.no-workspace-text{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    color: white;
+}
+
+.other-email-link{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+    color: #36c5f0;
 }

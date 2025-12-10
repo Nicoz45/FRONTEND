@@ -1,11 +1,15 @@
-*{
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Stack+Sans+Headline:wght@200..700&display=swap');
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Noto Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
 }
 
-.input-text{
+.input-text {
     display: flex;
     width: 100%;
     padding: 12px;
@@ -14,13 +18,13 @@
     box-shadow: 0px 0px 5px rgba(167, 167, 167, 0.74);
 }
 
-.label-text{
+.label-text {
     position: absolute;
     left: 5px;
     top: 10px;
 }
 
-input:focus~label{
+input:focus~label {
     top: -10px;
     color: #3c1341;
     background-color: white;

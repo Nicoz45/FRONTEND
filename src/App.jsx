@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, useParams } from 'react-router-dom'
 import HomeScreen from './screens/HomeScreen/HomeScreen.jsx'
 import LoginScreen from './screens/LoginScreen/LoginScreen.jsx'
 import RegisterScreen from './screens/RegisterScreen/RegisterScreen.jsx'
@@ -12,6 +12,7 @@ import VerificationCodeScreen from './screens/VerificationScreens/VerificationSc
 import CreateWorkspaceScreen from './screens/CreateWorkspaceScreen/CreateWorkspaceScreen.jsx'
 
 function App() {
+    useParams()
     return (
         <div>
             <Routes>

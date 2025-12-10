@@ -60,3 +60,21 @@ export async function createWorkspace(name, url_image){
     return response
 }
 
+
+export async function deleteWorkspace(workspace_id){
+    const response_http = await fetch(
+        ENVIRONMENT.VITE_API_URL + `/api/workspace/${workspace_id}`,
+        {
+            method: 'DELETE',
+            headers:{
+                'Authorization': `Bearer ${localStorage.getItem('auth_token')}`
+            }
+        }
+    )
+    if(!response_http.ok){
+        throw new Error('Error al eliminar el workspace')
+    }
+    const response = await response_http.json()
+    return response
+}
+
