@@ -198,12 +198,17 @@
     flex-direction: column;
     gap: 2px;
     overflow-y: auto;
-    max-height: 400px;
+    height: calc(200px + 50%);
+}
+
+.channel-item-wrapper {
+    position: relative;
 }
 
 .channel-item {
     display: flex;
-    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
     gap: 8px;
     padding: 8px 12px;
     border-radius: 6px;
@@ -211,6 +216,7 @@
     transition: all 0.2s ease;
     color: rgba(255, 255, 255, 0.7);
     font-size: 15px;
+    position: relative;
 }
 
 .channel-item:hover {
@@ -218,7 +224,13 @@
     color: #fff;
 }
 
+.channel-item:hover .channel-options-btn {
+    opacity: 1;
+}
+
 .channel-item.selected {
+    display: flex;
+    flex-direction: row;
     background: #611f69;
     color: #fff;
     font-weight: 600;
@@ -231,9 +243,128 @@
 }
 
 .channel-name {
+    flex: 1;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+}
+
+/* Channel Options Button */
+.channel-options-btn {
+    display: flex;
+    background-color: transparent;
+    background: none;
+    outline: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+    line-height: 1;
+}
+
+.channel-options-btn:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+/* Channel Options Menu */
+.channel-options-menu {
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    min-width: 150px;
+    overflow: hidden;
+    margin-top: 4px;
+}
+
+.channel-option-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    padding: 10px 16px;
+    background: transparent;
+    border: none;
+    color: #1d1c1d;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    text-align: left;
+}
+
+.channel-option-item:hover {
+    background: #f8f8f8;
+}
+
+.channel-option-item.delete {
+    color: #e01e5a;
+}
+
+.channel-option-item.delete:hover {
+    background: #fff0f4;
+}
+
+/* Channel Edit Form */
+.channel-edit-form {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 8px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 6px;
+}
+
+.channel-edit-input {
+    flex: 1;
+    padding: 6px 8px;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    color: #fff;
+    font-size: 14px;
+    outline: none;
+}
+
+.channel-edit-input:focus {
+    border-color: #611f69;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.channel-edit-buttons {
+    display: flex;
+    gap: 4px;
+}
+
+.btn-save-edit,
+.btn-cancel-edit {
+    padding: 4px 8px;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.btn-save-edit:hover {
+    background: rgba(46, 182, 125, 0.2);
+    color: #2eb67d;
+}
+
+.btn-cancel-edit:hover {
+    background: rgba(224, 30, 90, 0.2);
+    color: #e01e5a;
+}
+
+.btn-save-edit:disabled,
+.btn-cancel-edit:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
 }
 
 /* No Channels State */
@@ -312,5 +443,9 @@
 
     .workspace-sidebar {
         overflow-y: auto;
+    }
+
+    .channel-options-btn {
+        opacity: 1;
     }
 }
