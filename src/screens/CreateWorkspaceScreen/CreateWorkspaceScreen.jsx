@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import useCreateWorkspace from '../../Hooks/useCreateWorkspace'
-import '../../styles/CreateWorkspaceScreen.css'
+import '../../styles/createWorkspaceScreen.css'
 
 const CreateWorkspaceScreen = () => {
     const navigate = useNavigate()
