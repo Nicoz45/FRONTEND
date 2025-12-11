@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import useCreateWorkspace from '../../Hooks/useCreateWorkspace'
+import '../../styles/CreateWorkspaceScreen.css'
 
 const CreateWorkspaceScreen = () => {
     const navigate = useNavigate()
@@ -23,11 +24,16 @@ const CreateWorkspaceScreen = () => {
 
 
     return (
-        <div className='create-workspace-container'>
+        <div className='workspacescreen-general-container'>
             <div className='create-workspace-card'>
                 <div className='create-workspace-header'>
-                    <h1>Crear Nuevo Workspace</h1>
-                    <p>Configura tu espacio de trabajo</p>
+                    <div className='tittle-and-subtitle-container'>
+                        <h1>Crear Nuevo Workspace</h1>
+                        <p>Configura tu espacio de trabajo</p>
+                    </div>
+                    <div className="image-slack-logo-container">
+                        <img src="https://a.slack-edge.com/bv1-13/slack_logo-e971fd7.svg" alt="logo-slack" />
+                    </div>
                 </div>
 
                 <form className='create-workspace-form' onSubmit={handleSubmit}>
@@ -70,14 +76,14 @@ const CreateWorkspaceScreen = () => {
                     <div className='button-group'>
                         <button
                             type='submit'
-                            className='create-button'
+                            className='create-button cufflink-buttons'
                             disabled={loading}
                         >
                             {loading ? 'Creando...' : 'Crear Workspace'}
                         </button>
                         <button
                             type='button'
-                            className='cancel-button'
+                            className='cancel-button cufflink-buttons'
                             onClick={() => navigate('/home')}
                         >
                             Cancelar
