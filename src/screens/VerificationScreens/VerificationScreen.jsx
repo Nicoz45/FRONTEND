@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { AuthContext } from '../../Context/AuthContext'
 import useVerificationCode from '../../Hooks/useVerificationCode'
+import '../../styles/verificationScreen.css'
 
 
 const VerificationCodeScreen = () => {
@@ -50,48 +51,43 @@ const VerificationCodeScreen = () => {
             <div className='verification-card'>
                 <div className='verification-header'>
                     <h1>Verificación de Código</h1>
-                    <p>Hemos enviado un código de 6 dígitos a</p>
-                    <p className='user-email'>{user?.email}</p>
+                    <p>Hemos enviado un código de <span className='code-length letter-color'>6</span> dígitos a</p>
+                    <p className='user-email letter-color'>{user?.email}</p>
                 </div>
-
-                {sendError && <div className='error-message'>{sendError}</div>}
-                {sendResponse && sendResponse.ok && (
-                    <div className='success-message'>Código enviado correctamente</div>
-                )}
-
                 <div className='code-input-container'>
                     {code.map((digit, index) => (
                         <input
-                            key={index}
-                            id={`code-input-${index}`}
-                            type='text'
-                            maxLength={1}
-                            value={digit}
-                            onChange={(e) => handleInputChange(index, e.target.value)}
-                            onKeyDown={(e) => handleKeyDown(index, e)}
-                            onPaste={handlePaste}
-                            className='code-input'
-                            autoFocus={index === 0}
+                        key={index}
+                        id={`code-input-${index}`}
+                        type='text'
+                        maxLength={1}
+                        value={digit}
+                        onChange={(e) => handleInputChange(index, e.target.value)}
+                        onKeyDown={(e) => handleKeyDown(index, e)}
+                        onPaste={handlePaste}
+                        className='code-input'
+                        autoFocus={index === 0}
                         />
                     ))}
                 </div>
-
+                    {sendError && <div className='error-message'>{sendError}</div>}
+                    {sendResponse && sendResponse.ok && (
+                        <div className='success-message'>Código enviado correctamente</div>
+                    )}
                 {verifyError && <div className='error-message'>{verifyError}</div>}
-
                 <button
-                    className='verify-button'
+                    className='verify-button button-style'
                     onClick={onVerifyClick}
                     /* disabled={verifyLoading || !isCodeComplete} */
                 >
                     {verifyLoading ? 'Verificando...' : 'Verificar Código'}
                 </button>
-
                 <div className='timer-container'>
                     {!canResend ? (
                         <p>El código expira en: <span className='timer'>{formatTime(timer)}</span></p>
                     ) : (
                         <button
-                            className='resend-button'
+                            className='resend-button button-style'
                             onClick={handleResend}
                             disabled={sendLoading}
                         >
@@ -99,7 +95,6 @@ const VerificationCodeScreen = () => {
                         </button>
                     )}
                 </div>
-
                 <button
                     className='back-button'
                     onClick={() => navigate('/home')}>
