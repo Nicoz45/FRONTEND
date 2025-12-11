@@ -2,7 +2,7 @@
 
 Frontend de una aplicación tipo Slack desarrollada en React, que permite a los usuarios crear workspaces, gestionar canales y comunicarse en tiempo real.
 
-## 🚀 Características
+## Características
 
 - **Autenticación**: Registro, login, y recuperación de contraseña con tokens JWT
 - **Workspaces**: Crear, visualizar y eliminar espacios de trabajo
@@ -11,7 +11,7 @@ Frontend de una aplicación tipo Slack desarrollada en React, que permite a los 
 - **Interfaz Responsiva**: Diseño moderno similar a Slack
 - **Rutas Protegidas**: Middleware de autenticación para acceso seguro
 
-## 📋 Tabla de Contenidos
+## Tabla de Contenidos
 
 - [Instalación](#instalación)
 - [Configuración](#configuración)
@@ -26,7 +26,7 @@ Frontend de una aplicación tipo Slack desarrollada en React, que permite a los 
 - [Deploy](#deploy)
 - [Troubleshooting](#troubleshooting)
 
-## 🔧 Instalación
+## Instalación
 
 ### Requisitos Previos
 - Node.js 16+ 
@@ -59,7 +59,7 @@ npm run dev
 
 La aplicación estará disponible en `http://localhost:5173`
 
-## ⚙️ Configuración
+## Configuración
 
 ### Variables de Entorno
 
@@ -71,7 +71,7 @@ La aplicación estará disponible en `http://localhost:5173`
 
 Ver `src/config/environment.config.js` para más detalles sobre la configuración.
 
-## 📁 Estructura del Proyecto
+## Estructura del Proyecto
 
 ```
 src/
@@ -114,7 +114,7 @@ src/
     └── environment.config.js       # Configuración de variables
 ```
 
-## 🔧 Scripts Disponibles
+## Scripts Disponibles
 
 ```bash
 # Desarrollar
@@ -130,17 +130,16 @@ npm run preview
 npm run lint
 ```
 
-## 💻 Tecnologías Utilizadas
+## Tecnologías Utilizadas
 
 - **React 19.2.1**: Librería de UI
 - **Vite**: Build tool rápido
 - **React Router DOM 7.10.1**: Enrutamiento
 - **react-jwt**: Decodificación de JWT
 - **react-icons**: Iconos
-- **dotenv**: Manejo de variables de entorno
-- **ESLint**: Linting de código
+- **dotenv**: Manejo de variables de entornos
 
-## 🧩 Componentes Principales
+## Componentes Principales
 
 ### HomeScreenComponent
 Pantalla principal que muestra los workspaces del usuario.
@@ -169,7 +168,7 @@ Pantalla principal del workspace con canales.
 - Buscador de mensajes/canales
 - Información del workspace
 
-## 🎣 Hooks Personalizados
+## Hooks Personalizados
 
 ### `useFetch`
 Hook genérico para hacer peticiones HTTP.
@@ -219,7 +218,7 @@ Hook para obtener detalles de un workspace.
 const { workspace_detail, loading, error } = useWorkspaceDetail(workspace_id)
 ```
 
-## 🔐 Servicios
+## Servicios
 
 ### `authService.js`
 Funciones de autenticación:
@@ -241,7 +240,7 @@ createWorkspace(name, url_image)
 deleteWorkspace(workspace_id)
 ```
 
-## 🔑 Autenticación
+## Autenticación
 
 ### Flujo de Autenticación
 
@@ -267,7 +266,7 @@ Proporciona acceso global a:
 4. Cambia su contraseña
 5. Se redirige a login
 
-## 🌐 Rutas
+## Rutas
 
 ### Rutas Públicas
 - `/` → Login
@@ -282,7 +281,7 @@ Proporciona acceso global a:
 - `/create-workspace` → Crear workspace
 - `/workspace/:workspace_id` → Workspace específico
 
-## 🚀 Deploy
+## Deploy
 
 ### Deploy en Vercel
 
@@ -315,7 +314,7 @@ Proporciona acceso global a:
 
 **Nota**: La configuración de `rewrites` es crucial para que React Router funcione correctamente con rutas dinámicas.
 
-## 📝 Práctica y Convenciones
+## Práctica y Convenciones
 
 ### Estructura de Componentes
 - Imports
@@ -347,21 +346,16 @@ Proporciona acceso global a:
 ### Problema con rutas dinámicas en producción
 **Solución**: Asegurarse de que `vercel.json` tenga la configuración correcta de `rewrites`.
 
-## 📚 Recursos Adicionales
+## Recursos Adicionales
 
 - [Documentación de React](https://react.dev)
 - [React Router DOM](https://reactrouter.com)
 - [Vite](https://vitejs.dev)
 - [Vercel Docs](https://vercel.com/docs)
 
-## 👨‍💻 Autor
+## Autor
 
 Nicolás Zarate (Nicoz45)
 
-## 📄 Licencia
-
 Este proyecto es parte del bootcamp Full Stack de UTN.
 
----
-
-**Última actualización**: Diciembre 2025
