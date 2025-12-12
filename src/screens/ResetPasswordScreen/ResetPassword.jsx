@@ -61,7 +61,7 @@ const ResetPasswordScreen = () => {
                 <h1 className="reset-title">Restablecer contraseña</h1>
                 <p className="reset-text">Ingresa tu nueva contraseña</p>
                 <form onSubmit={handleSubmit} className="form-reset-container">
-                    <div className="form-input">
+                    <div className="form-input-reset">
                         <input type="password" className="password-input" 
                         value={form_State[RESET_PASSWORD_FORM_FIELDS.PASSWORD]}
                         name={RESET_PASSWORD_FORM_FIELDS.PASSWORD}
@@ -73,7 +73,7 @@ const ResetPasswordScreen = () => {
                         <input type="checkbox" onClick= "Password.type = this.checked ? 'text' : 'password'" />
                         <label htmlFor="Password" className="label-text">Nueva contraseña</label>
                     </div>
-                    <div className="form-input">
+                    <div className="form-input-reset">
                         <input type="password" className="password-input" 
                         value={form_State[RESET_PASSWORD_FORM_FIELDS.CONFIRM_PASSWORD]}
                         name={RESET_PASSWORD_FORM_FIELDS.CONFIRM_PASSWORD}
