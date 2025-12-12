@@ -93,9 +93,9 @@ const ResetPasswordScreen = () => {
                         </div>
                     )}
                     {loading ? (
-                        <button className='button-submit'disabled>Actualizando...</button>
+                        <button className='button-reset-password'disabled>Actualizando...</button>
                     ) : (
-                        <button type='submit' className='button-submit'>Restablecer contraseña</button>
+                        <button type='submit' className='button-reset-password'>Restablecer contraseña</button>
                     )}
                     <div className='back-to-login'>
                         <Link to="/login" className='back-to-login-link'><p>Regresar al inicio de sesion</p></Link>
