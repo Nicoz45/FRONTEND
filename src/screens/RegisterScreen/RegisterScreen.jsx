@@ -40,11 +40,8 @@ const RegisterScreen = () => {
         register(username, email, password)
     }
 
-
-    // Como useForm me retorna un objeto, uso destructuring para sacar lo que necesito
     const { form_State, onInputChange, handleSubmit, resetForm } = useForm(initial_form_state, onRegister)
 
-    /* register('nicolas', 'zaratenico52@gmail.com', 'Nicolatesla546') */
     return (
         <div className='general-form-container'>
             <header className='header-logo-container'>

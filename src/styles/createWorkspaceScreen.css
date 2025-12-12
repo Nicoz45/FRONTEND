@@ -102,7 +102,7 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    width: 50px;
+    width: 197px;
     height: 50px;
     filter: drop-shadow(0px 0px 3px rgba(0, 0, 0, 0.801));
 }
@@ -111,4 +111,81 @@
     .create-workspace-header{
         gap: 160px;
     }
+}
+
+@media screen and (max-width: 768px) {
+    .create-workspace-header{
+        gap: 120px;
+    }
+}
+
+@media screen and (max-width: 620px) {
+    .create-workspace-header{
+        gap: 20px;
+    }
+    .image-slack-logo-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 187px;
+    height: 40px;
+    }
+    .cufflink-buttons{
+        padding: 10px;
+    }
+    .workspace-input{
+        padding: 10px;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .create-workspace-header h1{
+        font-size: 24px;
+    }
+    .create-workspace-header p{
+        font-size: 14px;
+    }
+    .form-group label{
+        font-size: 14px;
+    }
+    .image-slack-logo-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 177px;
+    height: 30px;
+    }
+    .button-group{
+        gap: 5px;
+    }
+    .cufflink-buttons{
+        padding: 7px;
+        width: 100%;
+        font-size: 12px;
+        border-radius: 5px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .create-workspace-header h1{
+        font-size: 16px;
+    }
+    .create-workspace-header p{
+        font-size: 10px;
+    }
+    .form-group label{
+        font-size: 10px;
+    }
+    .image-slack-logo-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 160px;
+    height: 18px;
+    }
+    .cufflink-buttons{
+        padding: 5px;
+        width: 100%;
+}
 }
