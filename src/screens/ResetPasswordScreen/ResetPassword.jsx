@@ -62,27 +62,25 @@ const ResetPasswordScreen = () => {
                 <p className="reset-text">Ingresa tu nueva contraseña</p>
                 <form onSubmit={handleSubmit} className="form-reset-container">
                     <div className="form-input-reset">
-                        <input type="password" className="reset-password-input" 
-                        value={form_State[RESET_PASSWORD_FORM_FIELDS.PASSWORD]}
-                        name={RESET_PASSWORD_FORM_FIELDS.PASSWORD}
-                        id='Password'
-                        onChange={onInputChange}
-                        required
-                        minLength={6}
+                        <input type="password" className="reset-password-input"
+                            value={form_State[RESET_PASSWORD_FORM_FIELDS.PASSWORD]}
+                            name={RESET_PASSWORD_FORM_FIELDS.PASSWORD}
+                            id='Password'
+                            onChange={onInputChange}
+                            required
+                            minLength={6}
                         />
-                        <input type="checkbox" onClick= "Password.type = this.checked ? 'text' : 'password'" />
                         <label htmlFor="Password" className="label-text">Nueva contraseña</label>
                     </div>
                     <div className="form-input-reset">
-                        <input type="password" className="reset-password-input" 
-                        value={form_State[RESET_PASSWORD_FORM_FIELDS.CONFIRM_PASSWORD]}
-                        name={RESET_PASSWORD_FORM_FIELDS.CONFIRM_PASSWORD}
-                        id='ConfirmPassword'
-                        onChange={onInputChange}
-                        required
-                        minLength={6}
+                        <input type="password" className="reset-password-input"
+                            value={form_State[RESET_PASSWORD_FORM_FIELDS.CONFIRM_PASSWORD]}
+                            name={RESET_PASSWORD_FORM_FIELDS.CONFIRM_PASSWORD}
+                            id='ConfirmPassword'
+                            onChange={onInputChange}
+                            required
+                            minLength={6}
                         />
-                        <input type="checkbox" onClick= "ConfirmPassword.type = this.checked ? 'text' : 'password'" />
                         <label htmlFor="ConfirmPassword" className="label-text">Confirmar contraseña</label>
                     </div>
                     {error && <span className='error-message'>{error}</span>}
@@ -93,7 +91,7 @@ const ResetPasswordScreen = () => {
                         </div>
                     )}
                     {loading ? (
-                        <button className='button-reset-password'disabled>Actualizando...</button>
+                        <button className='button-reset-password' disabled>Actualizando...</button>
                     ) : (
                         <button type='submit' className='button-reset-password'>Restablecer contraseña</button>
                     )}
