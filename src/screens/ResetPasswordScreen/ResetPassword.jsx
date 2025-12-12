@@ -3,6 +3,7 @@ import useFetch from '../../Hooks/useFetch'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 import { resetPassword } from '../../services/authService'
 import useForm from '../../Hooks/useForm'
+import '../../styles/resetPasswordScreen.css'
 
 const ResetPasswordScreen = () => {
     const { token } = useParams()
@@ -50,9 +51,9 @@ const ResetPasswordScreen = () => {
     }, [response, navigate])
 
     return (
-        <div>
+        <div className='reset-password-general-container'>
             <header>
-                <div className='logo-container'>
+                <div className='reset-password-logo-container'>
                     <img src="https://a.slack-edge.com/bv1-13/slack_logo-e971fd7.svg" alt="slack-logo" style={{ width: '100px' }} />
                 </div>
             </header>
