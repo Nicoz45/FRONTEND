@@ -44,7 +44,9 @@ const ForgotPasswordScreen = () => {
                             value={form_State[FORGOT_PASSWORD_FORM_FIELDS.EMAIL]}
                             id='Email'
                             onChange={onInputChange}
-                            required />
+                            required
+                            placeholder=''
+                            />
                         <label htmlFor="Email" className='label-text'>Email</label>
                     </div>
                     {error && <span className='error-message'>{error}</span>}

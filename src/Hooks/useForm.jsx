@@ -4,6 +4,8 @@ import { useState } from "react"
 const useForm = (initial_form_state, onSubmit) => {
     // Estado con los valores del formulario
     const [form_State, setFormState] = useState(initial_form_state)
+    const [showPassword, setShowPassword] = useState(false)
+    const [showConfirmPassword, setShowConfirmPassword] = useState(false)
 
     //onInputChange la puedo utilizar porque es agnostica al formulario al igual que handleSubmit
     const onInputChange = (e) => {
@@ -17,11 +19,11 @@ const useForm = (initial_form_state, onSubmit) => {
         //Modifico el estado del formulario
         setFormState(
             (prevFormState) => {
-                return {...prevFormState, [field_name]: field_value}
+                return { ...prevFormState, [field_name]: field_value }
             }
         )
     }
-    
+
     // En handleSubmit saco onRegister porque es especifica de cada formulario y agrego onSubmit como parametro
     const handleSubmit = (e) => {
         //Evitamos que la pagina se recargue
@@ -40,7 +42,7 @@ const useForm = (initial_form_state, onSubmit) => {
         form_State,
         onInputChange,
         handleSubmit,
-        resetForm
+        resetForm,
     }
 }
 

@@ -24,7 +24,10 @@
     top: 10px;
 }
 
-input:focus~label {
+input:focus + label,
+input:not(:placeholder-shown) + label{
+    position: absolute;
+    left: 5px;
     top: -10px;
     color: #3c1341;
     background-color: white;

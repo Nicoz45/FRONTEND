@@ -7,6 +7,7 @@ import '../../styles/loginScreen.css'
 import '../../styles/index.css'
 import { AuthContext } from '../../Context/AuthContext'
 import ICONS from '../../constants/Icons'
+import usePassword from '../../Hooks/usePassword'
 
 const LoginScreen = () => {
     const navigate = useNavigate()
@@ -41,20 +42,19 @@ const LoginScreen = () => {
         })
     }
 
-    const { form_State, onInputChange, handleSubmit, resetForm } = useForm(initial_form_state, handleLogin)
+    const { form_State, onInputChange, handleSubmit, resetForm, } = useForm(initial_form_state, handleLogin)
 
     useEffect(
         () => {
             if (response && response.ok) {
-                //Queremos que persista el token en el localStorage
-                //Dejemos que el contexto se encargue de que sucedera
                 onLogin(response.body.auth_token)
             }
         },
         [response]
     )
 
-    //Si venimos de verificar el mail, mostrar la alerta de verificado.
+    const {showPassword, toggleShowPassword} = usePassword()
+
     return (
         <div className='login-general-container'>
             <header className='header-logo-slack-container'>
@@ -74,19 +74,27 @@ const LoginScreen = () => {
                             value={form_State[LOGIN_FORM_FIELDS.EMAIL]}
                             name={LOGIN_FORM_FIELDS.EMAIL}
                             id='Email'
-                            onChange={onInputChange} />
+                            onChange={onInputChange} 
+                            placeholder=''
+                            required/>
                         <label htmlFor="Email" className='label-text'>Email</label>
                     </div>
                     <div className='form-inputs'>
-                        <input type="password" className='input-text'
+                        <input type={showPassword ? 'text' : 'password'} className='input-text'
                             value={form_State[LOGIN_FORM_FIELDS.PASSWORD]}
                             name={LOGIN_FORM_FIELDS.PASSWORD}
                             id='Password'
-                            onChange={onInputChange} />
+                            onChange={onInputChange} 
+                            autoComplete='off'
+                            placeholder=''
+                            required/>
                         <label htmlFor="Password" className='label-text'>Password</label>
+                        <span className='show-password' onClick={toggleShowPassword}>
+                            {showPassword ? <ICONS.EyeSlash/> : <ICONS.Eye/>}
+                        </span>
                     </div>
-                    {error && <span style={{ color: 'red' }}className='little-text'>{error}</span>}
-                    {response && <span style={{ color: 'green' }}className='little-text'>Iniciando sesion</span>}
+                    {error && <span style={{ color: 'red' }}className='little-text-login'>{error}</span>}
+                    {response && <span style={{ color: 'green' }}className='little-text-login'>Iniciando sesion</span>}
                     {
                         loading
                         ? <button disabled className='button-login'>Login...</button>

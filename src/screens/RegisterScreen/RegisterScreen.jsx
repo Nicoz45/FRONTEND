@@ -6,6 +6,7 @@ import { register } from '../../services/authService.js'
 import useFetch from '../../Hooks/useFetch.jsx'
 import ICONS from '../../constants/Icons.jsx'
 import { Link } from 'react-router-dom'
+import usePassword from '../../Hooks/usePassword.jsx'
 
 const RegisterScreen = () => {
     //Guardamos los campos que tendra nuestro form
@@ -42,6 +43,8 @@ const RegisterScreen = () => {
 
     const { form_State, onInputChange, handleSubmit, resetForm } = useForm(initial_form_state, onRegister)
 
+    const { showPassword, toggleShowPassword } = usePassword()
+
     return (
         <div className='general-form-container'>
             <header className='header-logo-container'>
@@ -61,6 +64,8 @@ const RegisterScreen = () => {
                             name={REGISTER_FORM_FIELDS.USERNAME}
                             id='username'
                             onChange={onInputChange}
+                            placeholder=''
+                            required
                         />
                         <label htmlFor="username" className='label-text'>Nombre de usuario</label>
                     </div>
@@ -69,16 +74,24 @@ const RegisterScreen = () => {
                             value={form_State[REGISTER_FORM_FIELDS.EMAIL]}
                             name={REGISTER_FORM_FIELDS.EMAIL}
                             id='email'
-                            onChange={onInputChange} />
+                            onChange={onInputChange}
+                            placeholder=''
+                            required />
                         <label htmlFor="email" className='label-text'>Email:</label>
                     </div>
                     <div className='form-field'>
-                        <input className='input-text' type="password"
+                        <input className='input-text' type={showPassword ? 'text' : 'password'}
                             value={form_State[REGISTER_FORM_FIELDS.PASSWORD]}
                             name={REGISTER_FORM_FIELDS.PASSWORD}
                             id='password'
-                            onChange={onInputChange} />
+                            onChange={onInputChange}
+                            autoComplete='off'
+                            placeholder=''
+                            required />
                         <label htmlFor="password" className='label-text'>Contraseña</label>
+                        <span className='register-show-password' onClick={toggleShowPassword}>
+                            {showPassword ? <ICONS.EyeSlash/> : <ICONS.Eye/>}
+                        </span>
                     </div>
                     {error && <span className='error-text little-text'>{error}</span>}
                     {response && <span className='success-text little-text'>Usuario registrado con exito!</span>}

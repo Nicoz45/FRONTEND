@@ -31,7 +31,7 @@
 
 .form-field{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
@@ -67,7 +67,7 @@
 
 .little-text{
     display: flex;
-    max-width: 350px;
+    width: 100%;
     font-size: 12px;
     background-color: rgba(255, 255, 255, 0.384);
     padding: 5px;
@@ -135,6 +135,15 @@
     text-decoration:solid;
 }
 
+.register-show-password{
+    display: flex;
+    position: relative;
+    bottom: 30px;
+    left: 150px;
+    cursor: pointer;
+    color: #585858;
+}
+
 @media screen and (max-width: 768px) {
     .text-span{
         font-size: 14px;
@@ -178,5 +187,13 @@
     .title-and-form-container{
         display: flex;
         margin-bottom: 10px;
+    }
+    .register-show-password{
+        display: flex;
+        position: relative;
+        bottom: 30px;
+        left: 135px;
+        cursor: pointer;
+        color: #585858;
     }
 }

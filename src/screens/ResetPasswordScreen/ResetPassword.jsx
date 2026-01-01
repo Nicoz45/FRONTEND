@@ -4,7 +4,7 @@ import { Link, useNavigate, useParams } from 'react-router-dom'
 import { resetPassword } from '../../services/authService'
 import useForm from '../../Hooks/useForm'
 import '../../styles/resetPasswordScreen.css'
-
+import '../../styles/index.css'
 const ResetPasswordScreen = () => {
     const { token } = useParams()
     const navigate = useNavigate()
@@ -39,7 +39,7 @@ const ResetPasswordScreen = () => {
         })
     }
 
-    const { form_State, onInputChange, handleSubmit, resetForm } = useForm(initial_form_state, handleResetPassword)
+    const { form_State, onInputChange, handleSubmit, resetForm} = useForm(initial_form_state, handleResetPassword)
 
     useEffect(() => {
         if (response && response.ok) {
@@ -62,24 +62,26 @@ const ResetPasswordScreen = () => {
                 <p className="reset-text">Ingresa tu nueva contraseña</p>
                 <form onSubmit={handleSubmit} className="form-reset-container">
                     <div className="form-input-reset">
-                        <input type="password" className="reset-password-input"
+                        <input type="password" className='reset-password-input'
                             value={form_State[RESET_PASSWORD_FORM_FIELDS.PASSWORD]}
                             name={RESET_PASSWORD_FORM_FIELDS.PASSWORD}
                             id='Password'
                             onChange={onInputChange}
+                            autoComplete='off'
+                            placeholder=''
                             required
-                            minLength={6}
                         />
                         <label htmlFor="Password" className="label-text">Nueva contraseña</label>
                     </div>
                     <div className="form-input-reset">
-                        <input type="password" className="reset-password-input"
+                        <input type="password" className='reset-password-input'
                             value={form_State[RESET_PASSWORD_FORM_FIELDS.CONFIRM_PASSWORD]}
                             name={RESET_PASSWORD_FORM_FIELDS.CONFIRM_PASSWORD}
                             id='ConfirmPassword'
                             onChange={onInputChange}
+                            autoComplete='off'
+                            placeholder=''
                             required
-                            minLength={6}
                         />
                         <label htmlFor="ConfirmPassword" className="label-text">Confirmar contraseña</label>
                     </div>
