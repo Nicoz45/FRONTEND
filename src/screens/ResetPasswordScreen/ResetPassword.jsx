@@ -5,9 +5,12 @@ import { resetPassword } from '../../services/authService'
 import useForm from '../../Hooks/useForm'
 import '../../styles/resetPasswordScreen.css'
 import '../../styles/index.css'
+import usePassword from '../../Hooks/usePassword'
+import ICONS from '../../constants/Icons'
 const ResetPasswordScreen = () => {
     const { token } = useParams()
     const navigate = useNavigate()
+        const { showPassword, showConfirmPassword, toggleShowConfirmPassword, toggleShowPassword } = usePassword()
 
     const RESET_PASSWORD_FORM_FIELDS = {
         PASSWORD: 'password',
@@ -50,6 +53,7 @@ const ResetPasswordScreen = () => {
         }
     }, [response, navigate])
 
+
     return (
         <div className='reset-password-general-container'>
             <header>
@@ -62,7 +66,7 @@ const ResetPasswordScreen = () => {
                 <p className="reset-text">Ingresa tu nueva contraseña</p>
                 <form onSubmit={handleSubmit} className="form-reset-container">
                     <div className="form-input-reset">
-                        <input type="password" className='reset-password-input'
+                        <input type={showPassword ? 'text' : 'password'} className='reset-password-input'
                             value={form_State[RESET_PASSWORD_FORM_FIELDS.PASSWORD]}
                             name={RESET_PASSWORD_FORM_FIELDS.PASSWORD}
                             id='Password'
@@ -72,9 +76,12 @@ const ResetPasswordScreen = () => {
                             required
                         />
                         <label htmlFor="Password" className="label-text">Nueva contraseña</label>
+                        <span className='reset-show-password' onClick={toggleShowPassword} id='Password'>
+                            {showPassword ? <ICONS.EyeSlash/> : <ICONS.Eye/>}
+                        </span>
                     </div>
                     <div className="form-input-reset">
-                        <input type="password" className='reset-password-input'
+                        <input type={showConfirmPassword ? 'text' : 'password'} className='reset-password-input'
                             value={form_State[RESET_PASSWORD_FORM_FIELDS.CONFIRM_PASSWORD]}
                             name={RESET_PASSWORD_FORM_FIELDS.CONFIRM_PASSWORD}
                             id='ConfirmPassword'
@@ -84,6 +91,9 @@ const ResetPasswordScreen = () => {
                             required
                         />
                         <label htmlFor="ConfirmPassword" className="label-text">Confirmar contraseña</label>
+                        <span className='reset-show-password' onClick={toggleShowConfirmPassword} id='ComfirmPassword'>
+                            {showConfirmPassword ? <ICONS.EyeSlash/> : <ICONS.Eye/>}
+                        </span>
                     </div>
                     {error && <span className='error-message'>{error}</span>}
                     {response && response.ok && (
